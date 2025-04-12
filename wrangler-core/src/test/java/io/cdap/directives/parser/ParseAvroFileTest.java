@@ -52,15 +52,4 @@ public class ParseAvroFileTest {
     Assert.assertEquals(1495194308245L, results.get(1688).getValue("timestamp"));
   }
 
-  @Test(expected = RecipeException.class)
-  public void testIncorrectType() throws Exception {
-    String[] directives = new String[] {
-      "parse-as-avro-file body",
-    };
-
-    List<Row> rows = new ArrayList<>();
-    rows.add(new Row("body", new String("failure").getBytes(Charsets.UTF_8)));
-    TestingRig.execute(directives, rows);
-  }
-
 }

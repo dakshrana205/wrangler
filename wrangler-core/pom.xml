@@ -42,6 +42,11 @@
       <version>${guava.version}</version>
     </dependency>
     <dependency>
+      <groupId>org.reflections</groupId>
+      <artifactId>reflections</artifactId>
+      <version>0.9.12</version>
+    </dependency>
+    <dependency>
       <groupId>io.cdap.wrangler</groupId>
       <artifactId>wrangler-api</artifactId>
       <version>${project.version}</version>
@@ -71,6 +76,12 @@
 
     <!-- Test -->
 
+    <dependency>
+      <groupId>io.cdap.wrangler</groupId>
+      <artifactId>wrangler-test</artifactId>
+      <version>${project.version}</version>
+      <scope>test</scope>
+    </dependency>
     <dependency>
       <groupId>io.cdap.cdap</groupId>
       <artifactId>cdap-unit-test</artifactId>
@@ -357,6 +368,54 @@
             <item>${user.name}</item>
           </items>
         </configuration>
+      </plugin>
+      <plugin>
+        <groupId>org.apache.rat</groupId>
+        <artifactId>apache-rat-plugin</artifactId>
+        <version>0.10</version>
+        <executions>
+          <execution>
+            <id>rat-check</id>
+            <phase>validate</phase>
+            <goals>
+              <goal>check</goal>
+            </goals>
+            <configuration>
+              <excludes>
+                <exclude>rat-debug.log</exclude>
+                <exclude>cov-int/**</exclude>
+                <exclude>*.md</exclude>
+                <exclude>**/*.md</exclude>
+                <exclude>**/*.json</exclude>
+                <exclude>**/resources/**/*.png</exclude>
+                <exclude>**/resources/**/*.csv</exclude>
+                <exclude>**/resources/**/*.log</exclude>
+                <exclude>**/resources/**/*.xlsx</exclude>
+                <exclude>**/resources/**/*.extensions</exclude>
+                <exclude>**/resources/**/*.mapping</exclude>
+                <exclude>**/resources/**/*.avro</exclude>
+                <exclude>**/resources/**/*.desc</exclude>
+                <exclude>**/antlr4/**/*.g4</exclude>
+                <exclude>**/generated-sources/**</exclude>
+                <exclude>**/e2e-test/**</exclude>
+                <exclude>**/*.feature</exclude>
+                <exclude>**/BQValidationExpectedFiles/**</exclude>
+                <exclude>**/BQtesdata/**</exclude>
+                <exclude>wrangler-demos/**</exclude>
+                <exclude>**/com/example/**</exclude>
+                <exclude>/**/icons/**</exclude>
+                <exclude>**/target/**</exclude>
+                <exclude>**/target 2/**</exclude>
+                <exclude>**/*.tokens</exclude>
+                <exclude>**/*.lst</exclude>
+                <exclude>**/test/resources/**</exclude>
+                <exclude>**/*.class</exclude>
+                <exclude>**/resources/**/icd-*.txt</exclude>
+                <exclude>**/resources/**/*_cm_codes.txt</exclude>
+              </excludes>
+            </configuration>
+          </execution>
+        </executions>
       </plugin>
     </plugins>
   </build>

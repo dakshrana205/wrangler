@@ -1,0 +1,947 @@
+Apache Maven 3.9.9 (8e8579a9e76f7d015ee5ec7bfcdc97d260186937)
+Maven home: /opt/homebrew/Cellar/maven/3.9.9/libexec
+Java version: 22.0.2, vendor: Oracle Corporation, runtime: /Library/Java/JavaVirtualMachines/jdk-22.jdk/Contents/Home
+Default locale: en_IN, platform encoding: UTF-8
+OS name: "mac os x", version: "15.4", arch: "aarch64", family: "mac"
+[DEBUG] Created new class realm maven.api
+[DEBUG] Importing foreign packages into class realm maven.api
+[DEBUG]   Imported: javax.annotation.* < plexus.core
+[DEBUG]   Imported: javax.annotation.security.* < plexus.core
+[DEBUG]   Imported: javax.inject.* < plexus.core
+[DEBUG]   Imported: org.apache.maven.* < plexus.core
+[DEBUG]   Imported: org.apache.maven.artifact < plexus.core
+[DEBUG]   Imported: org.apache.maven.classrealm < plexus.core
+[DEBUG]   Imported: org.apache.maven.cli < plexus.core
+[DEBUG]   Imported: org.apache.maven.configuration < plexus.core
+[DEBUG]   Imported: org.apache.maven.exception < plexus.core
+[DEBUG]   Imported: org.apache.maven.execution < plexus.core
+[DEBUG]   Imported: org.apache.maven.execution.scope < plexus.core
+[DEBUG]   Imported: org.apache.maven.graph < plexus.core
+[DEBUG]   Imported: org.apache.maven.lifecycle < plexus.core
+[DEBUG]   Imported: org.apache.maven.model < plexus.core
+[DEBUG]   Imported: org.apache.maven.monitor < plexus.core
+[DEBUG]   Imported: org.apache.maven.plugin < plexus.core
+[DEBUG]   Imported: org.apache.maven.profiles < plexus.core
+[DEBUG]   Imported: org.apache.maven.project < plexus.core
+[DEBUG]   Imported: org.apache.maven.reporting < plexus.core
+[DEBUG]   Imported: org.apache.maven.repository < plexus.core
+[DEBUG]   Imported: org.apache.maven.rtinfo < plexus.core
+[DEBUG]   Imported: org.apache.maven.settings < plexus.core
+[DEBUG]   Imported: org.apache.maven.toolchain < plexus.core
+[DEBUG]   Imported: org.apache.maven.usability < plexus.core
+[DEBUG]   Imported: org.apache.maven.wagon.* < plexus.core
+[DEBUG]   Imported: org.apache.maven.wagon.authentication < plexus.core
+[DEBUG]   Imported: org.apache.maven.wagon.authorization < plexus.core
+[DEBUG]   Imported: org.apache.maven.wagon.events < plexus.core
+[DEBUG]   Imported: org.apache.maven.wagon.observers < plexus.core
+[DEBUG]   Imported: org.apache.maven.wagon.proxy < plexus.core
+[DEBUG]   Imported: org.apache.maven.wagon.repository < plexus.core
+[DEBUG]   Imported: org.apache.maven.wagon.resource < plexus.core
+[DEBUG]   Imported: org.codehaus.classworlds < plexus.core
+[DEBUG]   Imported: org.codehaus.plexus.* < plexus.core
+[DEBUG]   Imported: org.codehaus.plexus.classworlds < plexus.core
+[DEBUG]   Imported: org.codehaus.plexus.component < plexus.core
+[DEBUG]   Imported: org.codehaus.plexus.configuration < plexus.core
+[DEBUG]   Imported: org.codehaus.plexus.container < plexus.core
+[DEBUG]   Imported: org.codehaus.plexus.context < plexus.core
+[DEBUG]   Imported: org.codehaus.plexus.lifecycle < plexus.core
+[DEBUG]   Imported: org.codehaus.plexus.logging < plexus.core
+[DEBUG]   Imported: org.codehaus.plexus.personality < plexus.core
+[DEBUG]   Imported: org.codehaus.plexus.util.xml.Xpp3Dom < plexus.core
+[DEBUG]   Imported: org.codehaus.plexus.util.xml.pull.XmlPullParser < plexus.core
+[DEBUG]   Imported: org.codehaus.plexus.util.xml.pull.XmlPullParserException < plexus.core
+[DEBUG]   Imported: org.codehaus.plexus.util.xml.pull.XmlSerializer < plexus.core
+[DEBUG]   Imported: org.eclipse.aether.* < plexus.core
+[DEBUG]   Imported: org.eclipse.aether.artifact < plexus.core
+[DEBUG]   Imported: org.eclipse.aether.collection < plexus.core
+[DEBUG]   Imported: org.eclipse.aether.deployment < plexus.core
+[DEBUG]   Imported: org.eclipse.aether.graph < plexus.core
+[DEBUG]   Imported: org.eclipse.aether.impl < plexus.core
+[DEBUG]   Imported: org.eclipse.aether.installation < plexus.core
+[DEBUG]   Imported: org.eclipse.aether.internal.impl < plexus.core
+[DEBUG]   Imported: org.eclipse.aether.metadata < plexus.core
+[DEBUG]   Imported: org.eclipse.aether.repository < plexus.core
+[DEBUG]   Imported: org.eclipse.aether.resolution < plexus.core
+[DEBUG]   Imported: org.eclipse.aether.spi < plexus.core
+[DEBUG]   Imported: org.eclipse.aether.transfer < plexus.core
+[DEBUG]   Imported: org.eclipse.aether.util < plexus.core
+[DEBUG]   Imported: org.eclipse.aether.version < plexus.core
+[DEBUG]   Imported: org.fusesource.jansi.* < plexus.core
+[DEBUG]   Imported: org.slf4j.* < plexus.core
+[DEBUG]   Imported: org.slf4j.event.* < plexus.core
+[DEBUG]   Imported: org.slf4j.helpers.* < plexus.core
+[DEBUG]   Imported: org.slf4j.spi.* < plexus.core
+[DEBUG] Populating class realm maven.api
+[DEBUG] Created adapter factory; available factories [file-lock, rwlock-local, semaphore-local, noop]; available name mappers [discriminating, file-gav, file-hgav, file-static, gav, static]
+[INFO] Error stacktraces are turned on.
+[DEBUG] Message scheme: color
+[DEBUG] Message styles: debug info warning error success failure strong mojo project
+[DEBUG] Reading global settings from /opt/homebrew/Cellar/maven/3.9.9/libexec/conf/settings.xml
+[DEBUG] Reading user settings from /Users/dakshrana/.m2/settings.xml
+[DEBUG] Reading global toolchains from /opt/homebrew/Cellar/maven/3.9.9/libexec/conf/toolchains.xml
+[DEBUG] Reading user toolchains from /Users/dakshrana/.m2/toolchains.xml
+[DEBUG] Using local repository at /Users/dakshrana/.m2/repository
+[DEBUG] Using manager EnhancedLocalRepositoryManager with priority 10.0 for /Users/dakshrana/.m2/repository
+[INFO] Scanning for projects...
+[DEBUG] Extension realms for project io.cdap.wrangler:wrangler-core:jar:4.12.0-SNAPSHOT: (none)
+[DEBUG] Looking up lifecycle mappings for packaging jar from ClassRealm[plexus.core, parent: null]
+[DEBUG] Extension realms for project io.cdap.wrangler:wrangler:pom:4.12.0-SNAPSHOT: (none)
+[DEBUG] Looking up lifecycle mappings for packaging pom from ClassRealm[plexus.core, parent: null]
+[DEBUG] Resolving plugin prefix apache-rat from [org.apache.maven.plugins, org.codehaus.mojo]
+[DEBUG] Creating adapter using nameMapper 'gav' and factory 'rwlock-local'
+[DEBUG] Using mirror maven-default-http-blocker (http://0.0.0.0/) for apache.snapshots (http://repository.apache.org/snapshots).
+[DEBUG] Using mirror maven-default-http-blocker (http://0.0.0.0/) for codehaus.org (http://snapshots.repository.codehaus.org).
+[DEBUG] Using mirror maven-default-http-blocker (http://0.0.0.0/) for codehaus-snapshots (http://nexus.codehaus.org/snapshots/).
+[DEBUG] Resolved plugin prefix apache-rat to org.apache.rat:apache-rat-plugin from POM io.cdap.wrangler:wrangler-core:jar:4.12.0-SNAPSHOT
+[DEBUG] === REACTOR BUILD PLAN ================================================
+[DEBUG] Project: io.cdap.wrangler:wrangler-core:jar:4.12.0-SNAPSHOT
+[DEBUG] Tasks:   [apache-rat:check]
+[DEBUG] Style:   Regular
+[DEBUG] =======================================================================
+[INFO] 
+[INFO] -------------------< io.cdap.wrangler:wrangler-core >-------------------
+[INFO] Building Wrangler Core 4.12.0-SNAPSHOT
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[DEBUG] Resolving plugin prefix apache-rat from [org.apache.maven.plugins, org.codehaus.mojo]
+[DEBUG] Resolved plugin prefix apache-rat to org.apache.rat:apache-rat-plugin from POM io.cdap.wrangler:wrangler-core:jar:4.12.0-SNAPSHOT
+[DEBUG] Lifecycle clean -> [pre-clean, clean, post-clean]
+[DEBUG] Lifecycle default -> [validate, initialize, generate-sources, process-sources, generate-resources, process-resources, compile, process-classes, generate-test-sources, process-test-sources, generate-test-resources, process-test-resources, test-compile, process-test-classes, test, prepare-package, package, pre-integration-test, integration-test, post-integration-test, verify, install, deploy]
+[DEBUG] Lifecycle site -> [pre-site, site, post-site, site-deploy]
+[DEBUG] === PROJECT BUILD PLAN ================================================
+[DEBUG] Project:       io.cdap.wrangler:wrangler-core:4.12.0-SNAPSHOT
+[DEBUG] Dependencies (collect): []
+[DEBUG] Dependencies (resolve): []
+[DEBUG] Repositories (dependencies): [jitpack.io (https://jitpack.io, default, releases+snapshots), sonatype (https://oss.sonatype.org/content/groups/public, default, releases), sonatype-snapshots (https://oss.sonatype.org/content/repositories/snapshots, default, snapshots), central (https://repo.maven.apache.org/maven2, default, releases)]
+[DEBUG] Repositories (plugins)     : [central (https://repo.maven.apache.org/maven2, default, releases)]
+[DEBUG] -----------------------------------------------------------------------
+[DEBUG] Goal:          org.apache.rat:apache-rat-plugin:0.10:check (default-cli)
+[DEBUG] Style:         Regular
+[DEBUG] Configuration: <?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+  <addDefaultLicenseMatchers default-value="true">${rat.addDefaultLicenseMatchers}</addDefaultLicenseMatchers>
+  <addLicenseHeaders default-value="false">${rat.addLicenseHeaders}</addLicenseHeaders>
+  <basedir default-value="${basedir}">${rat.basedir}</basedir>
+  <copyrightMessage>${rat.copyrightMessage}</copyrightMessage>
+  <excludeSubProjects default-value="true">${rat.excludeSubprojects}</excludeSubProjects>
+  <ignoreErrors default-value="false">${rat.ignoreErrors}</ignoreErrors>
+  <numUnapprovedLicenses default-value="0">${rat.numUnapprovedLicenses}</numUnapprovedLicenses>
+  <reportFile default-value="${project.build.directory}/rat.txt">${rat.outputFile}</reportFile>
+  <reportStyle default-value="plain">${rat.outputStyle}</reportStyle>
+  <useDefaultExcludes default-value="true">${rat.useDefaultExcludes}</useDefaultExcludes>
+  <useEclipseDefaultExcludes default-value="true">${rat.useEclipseDefaultExcludes}</useEclipseDefaultExcludes>
+  <useIdeaDefaultExcludes default-value="true">${rat.useIdeaDefaultExcludes}</useIdeaDefaultExcludes>
+  <useMavenDefaultExcludes default-value="true">${rat.useMavenDefaultExcludes}</useMavenDefaultExcludes>
+  <project default-value="${project}"/>
+</configuration>
+[DEBUG] =======================================================================
+[INFO] 
+[INFO] --- apache-rat:0.10:check (default-cli) @ wrangler-core ---
+[DEBUG] Using mirror maven-default-http-blocker (http://0.0.0.0/) for apache.snapshots (http://people.apache.org/repo/m2-snapshot-repository).
+[DEBUG] Using mirror maven-default-http-blocker (http://0.0.0.0/) for snapshots (http://snapshots.maven.codehaus.org/maven2).
+[DEBUG] Using mirror maven-default-http-blocker (http://0.0.0.0/) for central (http://repo1.maven.org/maven2).
+[DEBUG] Using mirror maven-default-http-blocker (http://0.0.0.0/) for codehaus.snapshots (http://snapshots.repository.codehaus.org).
+[DEBUG] Using mirror maven-default-http-blocker (http://0.0.0.0/) for apache-snapshots (http://people.apache.org/maven-snapshot-repository).
+[DEBUG] Using mirror maven-default-http-blocker (http://0.0.0.0/) for codehaus-snapshots (http://snapshots.repository.codehaus.org).
+[DEBUG] Dependency collection stats {ConflictMarker.analyzeTime=517958, ConflictMarker.markTime=166292, ConflictMarker.nodeCount=161, ConflictIdSorter.graphTime=290458, ConflictIdSorter.topsortTime=176084, ConflictIdSorter.conflictIdCount=51, ConflictIdSorter.conflictIdCycleCount=0, ConflictResolver.totalTime=4515042, ConflictResolver.conflictItemCount=119, DfDependencyCollector.collectTime=200706333, DfDependencyCollector.transformTime=6553625}
+[DEBUG] org.apache.rat:apache-rat-plugin:jar:0.10
+[DEBUG]    org.apache.rat:apache-rat-core:jar:0.10:compile
+[DEBUG]       commons-collections:commons-collections:jar:3.2.1:compile (version managed from default)
+[DEBUG]       commons-lang:commons-lang:jar:2.6:compile (version managed from default)
+[DEBUG]       commons-io:commons-io:jar:2.2:compile (version managed from default)
+[DEBUG]       org.apache.commons:commons-compress:jar:1.5:compile (version managed from default)
+[DEBUG]       commons-cli:commons-cli:jar:1.2:compile (version managed from default)
+[DEBUG]    org.apache.maven:maven-artifact:jar:2.2.1:compile
+[DEBUG]    org.apache.maven:maven-artifact-manager:jar:2.2.1:compile
+[DEBUG]       org.apache.maven:maven-repository-metadata:jar:2.2.1:compile
+[DEBUG]       org.codehaus.plexus:plexus-container-default:jar:1.0-alpha-9-stable-1:compile
+[DEBUG]          classworlds:classworlds:jar:1.1-alpha-2:compile
+[DEBUG]       backport-util-concurrent:backport-util-concurrent:jar:3.1:compile
+[DEBUG]    org.apache.maven:maven-plugin-api:jar:2.2.1:compile
+[DEBUG]    org.apache.maven:maven-project:jar:2.2.1:compile
+[DEBUG]       org.apache.maven:maven-settings:jar:2.2.1:compile
+[DEBUG]       org.apache.maven:maven-profile:jar:2.2.1:compile
+[DEBUG]       org.apache.maven:maven-model:jar:2.2.1:compile
+[DEBUG]       org.apache.maven:maven-plugin-registry:jar:2.2.1:compile
+[DEBUG]       org.codehaus.plexus:plexus-interpolation:jar:1.11:compile
+[DEBUG]    org.apache.maven.doxia:doxia-core:jar:1.2:compile
+[DEBUG]       org.apache.maven.doxia:doxia-logging-api:jar:1.2:compile
+[DEBUG]       xerces:xercesImpl:jar:2.9.1:compile
+[DEBUG]          xml-apis:xml-apis:jar:1.3.04:compile
+[DEBUG]       org.apache.httpcomponents:httpclient:jar:4.0.2:compile
+[DEBUG]          org.apache.httpcomponents:httpcore:jar:4.0.1:compile
+[DEBUG]          commons-logging:commons-logging:jar:1.1.1:compile
+[DEBUG]          commons-codec:commons-codec:jar:1.3:compile
+[DEBUG]    org.apache.maven.doxia:doxia-decoration-model:jar:1.2:compile
+[DEBUG]    org.apache.maven.doxia:doxia-sink-api:jar:1.2:compile
+[DEBUG]    org.apache.maven.doxia:doxia-site-renderer:jar:1.2:compile
+[DEBUG]       org.apache.maven.doxia:doxia-module-xhtml:jar:1.2:compile
+[DEBUG]       org.apache.maven.doxia:doxia-module-fml:jar:1.2:compile
+[DEBUG]       org.codehaus.plexus:plexus-i18n:jar:1.0-beta-7:compile
+[DEBUG]       org.codehaus.plexus:plexus-velocity:jar:1.1.7:compile
+[DEBUG]       org.apache.velocity:velocity:jar:1.5:compile
+[DEBUG]          oro:oro:jar:2.0.8:compile
+[DEBUG]    org.apache.maven.reporting:maven-reporting-api:jar:3.0:compile
+[DEBUG]    org.apache.maven.shared:maven-plugin-testing-harness:jar:1.1:compile
+[DEBUG]       org.apache.maven:maven-core:jar:2.0:compile
+[DEBUG]          org.apache.maven:maven-plugin-parameter-documenter:jar:2.0:compile
+[DEBUG]          org.apache.maven:maven-error-diagnostics:jar:2.0:compile
+[DEBUG]          org.apache.maven:maven-plugin-descriptor:jar:2.0:compile
+[DEBUG]          org.codehaus.plexus:plexus-interactivity-api:jar:1.0-alpha-4:compile
+[DEBUG]          org.apache.maven:maven-monitor:jar:2.0:compile
+[DEBUG]       junit:junit:jar:4.11:test (scope managed from default) (version managed from default)
+[DEBUG]          org.hamcrest:hamcrest-core:jar:1.3:test
+[DEBUG]       org.codehaus.plexus:plexus-archiver:jar:1.0-alpha-7:compile
+[DEBUG]    org.codehaus.plexus:plexus-utils:jar:3.0.8:compile
+[DEBUG] Created new class realm plugin>org.apache.rat:apache-rat-plugin:0.10
+[DEBUG] Importing foreign packages into class realm plugin>org.apache.rat:apache-rat-plugin:0.10
+[DEBUG]   Imported:  < maven.api
+[DEBUG] Populating class realm plugin>org.apache.rat:apache-rat-plugin:0.10
+[DEBUG]   Included: org.apache.rat:apache-rat-plugin:jar:0.10
+[DEBUG]   Included: org.apache.rat:apache-rat-core:jar:0.10
+[DEBUG]   Included: commons-collections:commons-collections:jar:3.2.1
+[DEBUG]   Included: commons-lang:commons-lang:jar:2.6
+[DEBUG]   Included: commons-io:commons-io:jar:2.2
+[DEBUG]   Included: org.apache.commons:commons-compress:jar:1.5
+[DEBUG]   Included: commons-cli:commons-cli:jar:1.2
+[DEBUG]   Included: backport-util-concurrent:backport-util-concurrent:jar:3.1
+[DEBUG]   Included: org.codehaus.plexus:plexus-interpolation:jar:1.11
+[DEBUG]   Included: org.apache.maven.doxia:doxia-core:jar:1.2
+[DEBUG]   Included: org.apache.maven.doxia:doxia-logging-api:jar:1.2
+[DEBUG]   Included: xerces:xercesImpl:jar:2.9.1
+[DEBUG]   Included: xml-apis:xml-apis:jar:1.3.04
+[DEBUG]   Included: org.apache.httpcomponents:httpclient:jar:4.0.2
+[DEBUG]   Included: org.apache.httpcomponents:httpcore:jar:4.0.1
+[DEBUG]   Included: commons-logging:commons-logging:jar:1.1.1
+[DEBUG]   Included: commons-codec:commons-codec:jar:1.3
+[DEBUG]   Included: org.apache.maven.doxia:doxia-decoration-model:jar:1.2
+[DEBUG]   Included: org.apache.maven.doxia:doxia-sink-api:jar:1.2
+[DEBUG]   Included: org.apache.maven.doxia:doxia-site-renderer:jar:1.2
+[DEBUG]   Included: org.apache.maven.doxia:doxia-module-xhtml:jar:1.2
+[DEBUG]   Included: org.apache.maven.doxia:doxia-module-fml:jar:1.2
+[DEBUG]   Included: org.codehaus.plexus:plexus-i18n:jar:1.0-beta-7
+[DEBUG]   Included: org.codehaus.plexus:plexus-velocity:jar:1.1.7
+[DEBUG]   Included: org.apache.velocity:velocity:jar:1.5
+[DEBUG]   Included: oro:oro:jar:2.0.8
+[DEBUG]   Included: org.apache.maven.reporting:maven-reporting-api:jar:3.0
+[DEBUG]   Included: org.apache.maven.shared:maven-plugin-testing-harness:jar:1.1
+[DEBUG]   Included: org.codehaus.plexus:plexus-interactivity-api:jar:1.0-alpha-4
+[DEBUG]   Included: org.codehaus.plexus:plexus-archiver:jar:1.0-alpha-7
+[DEBUG]   Included: org.codehaus.plexus:plexus-utils:jar:3.0.8
+[DEBUG] Loading mojo org.apache.rat:apache-rat-plugin:0.10:check from plugin realm ClassRealm[plugin>org.apache.rat:apache-rat-plugin:0.10, parent: jdk.internal.loader.ClassLoaders$AppClassLoader@43e45247]
+[DEBUG] Configuring mojo execution 'org.apache.rat:apache-rat-plugin:0.10:check:default-cli' with basic configurator -->
+[DEBUG]   (f) addDefaultLicenseMatchers = true
+[DEBUG]   (f) addLicenseHeaders = false
+[DEBUG]   (f) basedir = /Users/dakshrana/Desktop/wrangler/wrangler-core
+[DEBUG]   (f) excludeSubProjects = true
+[DEBUG]   (f) ignoreErrors = false
+[DEBUG]   (f) numUnapprovedLicenses = 0
+[DEBUG]   (f) reportFile = /Users/dakshrana/Desktop/wrangler/wrangler-core/target/rat.txt
+[DEBUG]   (f) reportStyle = plain
+[DEBUG]   (f) useDefaultExcludes = true
+[DEBUG]   (f) useEclipseDefaultExcludes = true
+[DEBUG]   (f) useIdeaDefaultExcludes = true
+[DEBUG]   (f) useMavenDefaultExcludes = true
+[DEBUG]   (f) project = MavenProject: io.cdap.wrangler:wrangler-core:4.12.0-SNAPSHOT @ /Users/dakshrana/Desktop/wrangler/wrangler-core/pom.xml
+[DEBUG] -- end configuration --
+[DEBUG] Adding plexus default exclusions...
+[DEBUG] Adding exclusions often needed by Maven projects...
+[DEBUG] Adding exclusions often needed by projects developed in Eclipse...
+[DEBUG] Adding exclusions often needed by projects developed in IDEA...
+[DEBUG] Finished creating list of implicit excludes.
+[INFO] 51 implicit excludes (use -debug for more details).
+[DEBUG] Implicit exclude: **/*~
+[DEBUG] Implicit exclude: **/#*#
+[DEBUG] Implicit exclude: **/.#*
+[DEBUG] Implicit exclude: **/%*%
+[DEBUG] Implicit exclude: **/._*
+[DEBUG] Implicit exclude: **/CVS
+[DEBUG] Implicit exclude: **/CVS/**
+[DEBUG] Implicit exclude: **/.cvsignore
+[DEBUG] Implicit exclude: **/RCS
+[DEBUG] Implicit exclude: **/RCS/**
+[DEBUG] Implicit exclude: **/SCCS
+[DEBUG] Implicit exclude: **/SCCS/**
+[DEBUG] Implicit exclude: **/vssver.scc
+[DEBUG] Implicit exclude: **/project.pj
+[DEBUG] Implicit exclude: **/.svn
+[DEBUG] Implicit exclude: **/.svn/**
+[DEBUG] Implicit exclude: **/.arch-ids
+[DEBUG] Implicit exclude: **/.arch-ids/**
+[DEBUG] Implicit exclude: **/.bzr
+[DEBUG] Implicit exclude: **/.bzr/**
+[DEBUG] Implicit exclude: **/.MySCMServerInfo
+[DEBUG] Implicit exclude: **/.DS_Store
+[DEBUG] Implicit exclude: **/.metadata
+[DEBUG] Implicit exclude: **/.metadata/**
+[DEBUG] Implicit exclude: **/.hg
+[DEBUG] Implicit exclude: **/.hg/**
+[DEBUG] Implicit exclude: **/.git
+[DEBUG] Implicit exclude: **/.gitignore
+[DEBUG] Implicit exclude: **/.gitattributes
+[DEBUG] Implicit exclude: **/.git/**
+[DEBUG] Implicit exclude: **/BitKeeper
+[DEBUG] Implicit exclude: **/BitKeeper/**
+[DEBUG] Implicit exclude: **/ChangeSet
+[DEBUG] Implicit exclude: **/ChangeSet/**
+[DEBUG] Implicit exclude: **/_darcs
+[DEBUG] Implicit exclude: **/_darcs/**
+[DEBUG] Implicit exclude: **/.darcsrepo
+[DEBUG] Implicit exclude: **/.darcsrepo/**
+[DEBUG] Implicit exclude: **/-darcs-backup*
+[DEBUG] Implicit exclude: **/.darcs-temp-mail
+[DEBUG] Implicit exclude: target/**/*
+[DEBUG] Implicit exclude: cobertura.ser
+[DEBUG] Implicit exclude: release.properties
+[DEBUG] Implicit exclude: pom.xml.releaseBackup
+[DEBUG] Implicit exclude: .classpath
+[DEBUG] Implicit exclude: .project
+[DEBUG] Implicit exclude: .settings/**/*
+[DEBUG] Implicit exclude: *.iml
+[DEBUG] Implicit exclude: *.ipr
+[DEBUG] Implicit exclude: *.iws
+[DEBUG] Implicit exclude: .idea/**/*
+[INFO] No excludes explicitly specified.
+[DEBUG] Excluded 1 resources:
+[DEBUG]  - excluded target/rat.txt
+[INFO] 570 resources included (use -debug for more details)
+[DEBUG]  - included target 2/rat.txt
+[DEBUG]  - included target 2/wrangler-core-4.12.0-SNAPSHOT.jar
+[DEBUG]  - included target 2/generated-sources/antlr4/io/cdap/wrangler/parser/DirectivesListener.java
+[DEBUG]  - included target 2/generated-sources/antlr4/io/cdap/wrangler/parser/DirectivesBaseListener.java
+[DEBUG]  - included target 2/generated-sources/antlr4/io/cdap/wrangler/parser/DirectivesBaseVisitor.java
+[DEBUG]  - included target 2/generated-sources/antlr4/io/cdap/wrangler/parser/DirectivesParser.java
+[DEBUG]  - included target 2/generated-sources/antlr4/io/cdap/wrangler/parser/DirectivesVisitor.java
+[DEBUG]  - included target 2/generated-sources/antlr4/io/cdap/wrangler/parser/DirectivesLexer.java
+[DEBUG]  - included target 2/generated-sources/antlr4/Directives.tokens
+[DEBUG]  - included target 2/generated-sources/antlr4/DirectivesLexer.tokens
+[DEBUG]  - included target 2/checkstyle-result.xml
+[DEBUG]  - included target 2/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst
+[DEBUG]  - included target 2/maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst
+[DEBUG]  - included target 2/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst
+[DEBUG]  - included target 2/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst
+[DEBUG]  - included target 2/checkstyle-suppressions.xml
+[DEBUG]  - included target 2/maven-archiver/pom.properties
+[DEBUG]  - included target 2/surefire-reports/TEST-io.cdap.directives.transformation.UpperTest.xml
+[DEBUG]  - included target 2/surefire-reports/io.cdap.directives.transformation.UrlEncodeTest.txt
+[DEBUG]  - included target 2/surefire-reports/io.cdap.directives.transformation.TextMetricMeasureTest.txt
+[DEBUG]  - included target 2/surefire-reports/TEST-io.cdap.directives.writer.WriteAsJsonObjectTest.xml
+[DEBUG]  - included target 2/surefire-reports/io.cdap.directives.column.CopyTest.txt
+[DEBUG]  - included target 2/surefire-reports/io.cdap.directives.transformation.GenerateUUIDTest.txt
+[DEBUG]  - included target 2/surefire-reports/TEST-io.cdap.wrangler.datamodel.HTTPSchemaLoaderTest.xml
+[DEBUG]  - included target 2/surefire-reports/io.cdap.directives.npl.StemmingTest.txt
+[DEBUG]  - included target 2/surefire-reports/TEST-io.cdap.directives.external.InvokeHttpTest.xml
+[DEBUG]  - included target 2/surefire-reports/TEST-io.cdap.directives.transformation.FillNullOrEmptyTest.xml
+[DEBUG]  - included target 2/surefire-reports/TEST-io.cdap.directives.validation.ValidateStandardTest.xml
+[DEBUG]  - included target 2/surefire-reports/io.cdap.directives.transformation.LeftTrimTest.txt
+[DEBUG]  - included target 2/surefire-reports/TEST-io.cdap.wrangler.config.DirectiveConfigTest.xml
+[DEBUG]  - included target 2/surefire-reports/TEST-io.cdap.wrangler.parser.GrammarMigratorTest.xml
+[DEBUG]  - included target 2/surefire-reports/TEST-io.cdap.functions.JsonFunctionsTest.xml
+[DEBUG]  - included target 2/surefire-reports/io.cdap.wrangler.expression.ELTest.txt
+[DEBUG]  - included target 2/surefire-reports/TEST-io.cdap.directives.transformation.ParseDateTest.xml
+[DEBUG]  - included target 2/surefire-reports/io.cdap.wrangler.dq.ConvertDistancesTest.txt
+[DEBUG]  - included target 2/surefire-reports/io.cdap.wrangler.registry.CompositeDirectiveRegistryTest.txt
+[DEBUG]  - included target 2/surefire-reports/io.cdap.directives.row.SplitToRowsTest.txt
+[DEBUG]  - included target 2/surefire-reports/io.cdap.directives.parser.ParseDateTimeTest.txt
+[DEBUG]  - included target 2/surefire-reports/io.cdap.directives.validation.conformers.JsonConformerTest.txt
+[DEBUG]  - included target 2/surefire-reports/io.cdap.directives.transformation.LowerTest.txt
+[DEBUG]  - included target 2/surefire-reports/io.cdap.wrangler.registry.SystemDirectiveRegistryTest.txt
+[DEBUG]  - included target 2/surefire-reports/io.cdap.wrangler.parser.GrammarBasedParserTest.txt
+[DEBUG]  - included target 2/surefire-reports/io.cdap.directives.validation.ValidateStandardTest.txt
+[DEBUG]  - included target 2/surefire-reports/TEST-io.cdap.directives.transformation.GenerateUUIDTest.xml
+[DEBUG]  - included target 2/surefire-reports/io.cdap.directives.column.RenameTest.txt
+[DEBUG]  - included target 2/surefire-reports/io.cdap.directives.transformation.RightTrimTest.txt
+[DEBUG]  - included target 2/surefire-reports/TEST-io.cdap.functions.LogicalTest.xml
+[DEBUG]  - included target 2/surefire-reports/io.cdap.wrangler.utils.ArtifactSummaryComparatorTest.txt
+[DEBUG]  - included target 2/surefire-reports/TEST-io.cdap.directives.transformation.MessageHashTest.xml
+[DEBUG]  - included target 2/surefire-reports/io.cdap.directives.datetime.DateTimeToTimestampTest.txt
+[DEBUG]  - included target 2/surefire-reports/io.cdap.directives.datetime.TimestampToDateTimeTest.txt
+[DEBUG]  - included target 2/surefire-reports/io.cdap.directives.parser.ParseExcelTest.txt
+[DEBUG]  - included target 2/surefire-reports/io.cdap.directives.parser.FixedLengthParserTest.txt
+[DEBUG]  - included target 2/surefire-reports/TEST-io.cdap.directives.aggregates.AggregateStatsTest.xml
+[DEBUG]  - included target 2/surefire-reports/io.cdap.directives.datamodel.DataModelMapColumnTest.txt
+[DEBUG]  - included target 2/surefire-reports/io.cdap.directives.transformation.ExtractRegexGroupsTest.txt
+[DEBUG]  - included target 2/surefire-reports/TEST-io.cdap.directives.column.RenameTest.xml
+[DEBUG]  - included target 2/surefire-reports/io.cdap.wrangler.i18n.MessagesTest.txt
+[DEBUG]  - included target 2/surefire-reports/TEST-io.cdap.directives.row.SendToErrorAndContinueTest.xml
+[DEBUG]  - included target 2/surefire-reports/TEST-io.cdap.directives.column.CleanseColumnNamesTest.xml
+[DEBUG]  - included target 2/surefire-reports/io.cdap.wrangler.utils.ArithmeticOperationsTest.txt
+[DEBUG]  - included target 2/surefire-reports/io.cdap.functions.ExpressionTest.txt
+[DEBUG]  - included target 2/surefire-reports/io.cdap.directives.writer.WriteAsCSVTest.txt
+[DEBUG]  - included target 2/surefire-reports/TEST-io.cdap.wrangler.utils.ReferenceNamesTest.xml
+[DEBUG]  - included target 2/surefire-reports/io.cdap.directives.datetime.FormatDateTimeTest.txt
+[DEBUG]  - included target 2/surefire-reports/io.cdap.directives.row.SendToErrorAndContinueTest.txt
+[DEBUG]  - included target 2/surefire-reports/TEST-io.cdap.wrangler.utils.AvroSchemaGlossaryTest.xml
+[DEBUG]  - included target 2/surefire-reports/TEST-io.cdap.directives.transformation.TrimTest.xml
+[DEBUG]  - included target 2/surefire-reports/io.cdap.functions.DDLTest.txt
+[DEBUG]  - included target 2/surefire-reports/TEST-io.cdap.wrangler.lineage.LineageOperationsTest.xml
+[DEBUG]  - included target 2/surefire-reports/TEST-io.cdap.directives.transformation.SplitEmailTest.xml
+[DEBUG]  - included target 2/surefire-reports/io.cdap.wrangler.dq.ConvertStringTest.txt
+[DEBUG]  - included target 2/surefire-reports/TEST-io.cdap.functions.DDLTest.xml
+[DEBUG]  - included target 2/surefire-reports/TEST-io.cdap.directives.column.MergeTest.xml
+[DEBUG]  - included target 2/surefire-reports/TEST-io.cdap.directives.transformation.SplitURLTest.xml
+[DEBUG]  - included target 2/surefire-reports/io.cdap.directives.datetime.CurrentDateTimeTest.txt
+[DEBUG]  - included target 2/surefire-reports/TEST-io.cdap.functions.GlobalTest.xml
+[DEBUG]  - included target 2/surefire-reports/io.cdap.directives.transformation.MaskNumberTest.txt
+[DEBUG]  - included target 2/surefire-reports/TEST-io.cdap.directives.row.SplitToRowsTest.xml
+[DEBUG]  - included target 2/surefire-reports/TEST-io.cdap.directives.parser.HL7ParserTest.xml
+[DEBUG]  - included target 2/surefire-reports/io.cdap.directives.parser.ParseAvroFileTest.txt
+[DEBUG]  - included target 2/surefire-reports/TEST-io.cdap.wrangler.parser.MapArgumentsTest.xml
+[DEBUG]  - included target 2/surefire-reports/TEST-io.cdap.directives.transformation.TitleCaseTest.xml
+[DEBUG]  - included target 2/surefire-reports/io.cdap.functions.NumberFunctionsTest.txt
+[DEBUG]  - included target 2/surefire-reports/io.cdap.directives.row.FailTest.txt
+[DEBUG]  - included target 2/surefire-reports/io.cdap.directives.transformation.MessageHashTest.txt
+[DEBUG]  - included target 2/surefire-reports/TEST-io.cdap.directives.row.FailTest.xml
+[DEBUG]  - included target 2/surefire-reports/io.cdap.functions.DateAndTimeTest.txt
+[DEBUG]  - included target 2/surefire-reports/TEST-io.cdap.directives.column.SetTypeTest.xml
+[DEBUG]  - included target 2/surefire-reports/TEST-io.cdap.directives.parser.XmlToJsonTest.xml
+[DEBUG]  - included target 2/surefire-reports/TEST-io.cdap.wrangler.parser.NoOpDirectiveContextTest.xml
+[DEBUG]  - included target 2/surefire-reports/TEST-io.cdap.wrangler.parser.UsageRegistryTest.xml
+[DEBUG]  - included target 2/surefire-reports/TEST-io.cdap.directives.transformation.SwapTest.xml
+[DEBUG]  - included target 2/surefire-reports/TEST-io.cdap.directives.parser.ParseAvroTest.xml
+[DEBUG]  - included target 2/surefire-reports/io.cdap.directives.parser.ParseSimpleDateTest.txt
+[DEBUG]  - included target 2/surefire-reports/io.cdap.wrangler.executor.SchemaGenerationTest.txt
+[DEBUG]  - included target 2/surefire-reports/io.cdap.directives.column.KeepTest.txt
+[DEBUG]  - included target 2/surefire-reports/io.cdap.directives.row.RowConditionFilterTest.txt
+[DEBUG]  - included target 2/surefire-reports/io.cdap.directives.column.SplitToColumnsTest.txt
+[DEBUG]  - included target 2/surefire-reports/TEST-io.cdap.functions.DataQualityTest.xml
+[DEBUG]  - included target 2/surefire-reports/io.cdap.directives.column.FlattenRecordTest.txt
+[DEBUG]  - included target 2/surefire-reports/TEST-io.cdap.directives.transformation.CharacterCutTest.xml
+[DEBUG]  - included target 2/surefire-reports/io.cdap.wrangler.parser.RecipeCompilerTest.txt
+[DEBUG]  - included target 2/surefire-reports/TEST-io.cdap.wrangler.statistics.BasicStatisticsTest.xml
+[DEBUG]  - included target 2/surefire-reports/io.cdap.directives.column.SetTypeTest.txt
+[DEBUG]  - included target 2/surefire-reports/TEST-io.cdap.wrangler.utils.KryoSerializerTest.xml
+[DEBUG]  - included target 2/surefire-reports/io.cdap.directives.parser.XmlToJsonTest.txt
+[DEBUG]  - included target 2/surefire-reports/TEST-io.cdap.directives.column.ChangeColCaseNamesTest.xml
+[DEBUG]  - included target 2/surefire-reports/TEST-io.cdap.directives.row.FlattenTest.xml
+[DEBUG]  - included target 2/surefire-reports/TEST-io.cdap.functions.NumberFunctionsTest.xml
+[DEBUG]  - included target 2/surefire-reports/io.cdap.directives.transformation.QuantizationTest.txt
+[DEBUG]  - included target 2/surefire-reports/io.cdap.directives.lookup.CatalogLookupTest.txt
+[DEBUG]  - included target 2/surefire-reports/TEST-io.cdap.directives.column.SplitToColumnsTest.xml
+[DEBUG]  - included target 2/surefire-reports/io.cdap.directives.transformation.FillNullOrEmptyTest.txt
+[DEBUG]  - included target 2/surefire-reports/io.cdap.directives.parser.ParseAvroTest.txt
+[DEBUG]  - included target 2/surefire-reports/TEST-io.cdap.directives.row.RowRegexFilterTest.xml
+[DEBUG]  - included target 2/surefire-reports/io.cdap.directives.column.CreateRecordTest.txt
+[DEBUG]  - included target 2/surefire-reports/TEST-io.cdap.wrangler.utils.ArtifactSummaryComparatorTest.xml
+[DEBUG]  - included target 2/surefire-reports/TEST-io.cdap.wrangler.registry.SystemDirectiveRegistryTest.xml
+[DEBUG]  - included target 2/surefire-reports/io.cdap.directives.column.ColumnsReplaceTest.txt
+[DEBUG]  - included target 2/surefire-reports/io.cdap.wrangler.codec.JsonAvroDecoderTest.txt
+[DEBUG]  - included target 2/surefire-reports/io.cdap.directives.currency.ParseAsCurrencyTest.txt
+[DEBUG]  - included target 2/surefire-reports/TEST-io.cdap.directives.transformation.QuantizationTest.xml
+[DEBUG]  - included target 2/surefire-reports/io.cdap.functions.GeoFenceTest.txt
+[DEBUG]  - included target 2/surefire-reports/TEST-io.cdap.wrangler.utils.RecordConvertorTest.xml
+[DEBUG]  - included target 2/surefire-reports/TEST-io.cdap.wrangler.dq.ConvertStringTest.xml
+[DEBUG]  - included target 2/surefire-reports/TEST-io.cdap.directives.currency.FormatAsCurrencyTest.xml
+[DEBUG]  - included target 2/surefire-reports/io.cdap.directives.transformation.CharacterCutTest.txt
+[DEBUG]  - included target 2/surefire-reports/io.cdap.directives.parser.HL7ParserTest.txt
+[DEBUG]  - included target 2/surefire-reports/io.cdap.wrangler.utils.SchemaConverterTest.txt
+[DEBUG]  - included target 2/surefire-reports/io.cdap.functions.GlobalTest.txt
+[DEBUG]  - included target 2/surefire-reports/TEST-io.cdap.directives.column.ColumnsReplaceTest.xml
+[DEBUG]  - included target 2/surefire-reports/TEST-io.cdap.directives.aggregates.SetTransientVariableTest.xml
+[DEBUG]  - included target 2/surefire-reports/TEST-io.cdap.wrangler.codec.JsonAvroDecoderTest.xml
+[DEBUG]  - included target 2/surefire-reports/TEST-io.cdap.directives.transformation.RightTrimTest.xml
+[DEBUG]  - included target 2/surefire-reports/TEST-io.cdap.wrangler.i18n.MessagesTest.xml
+[DEBUG]  - included target 2/surefire-reports/TEST-io.cdap.directives.transformation.LowerTest.xml
+[DEBUG]  - included target 2/surefire-reports/io.cdap.functions.DataQualityTest.txt
+[DEBUG]  - included target 2/surefire-reports/TEST-io.cdap.wrangler.dq.ConvertDistancesTest.xml
+[DEBUG]  - included target 2/surefire-reports/TEST-io.cdap.directives.transformation.MaskNumberTest.xml
+[DEBUG]  - included target 2/surefire-reports/TEST-io.cdap.directives.row.SendToErrorTest.xml
+[DEBUG]  - included target 2/surefire-reports/TEST-io.cdap.directives.column.CreateRecordTest.xml
+[DEBUG]  - included target 2/surefire-reports/TEST-io.cdap.wrangler.executor.SchemaGenerationTest.xml
+[DEBUG]  - included target 2/surefire-reports/io.cdap.directives.transformation.SplitEmailTest.txt
+[DEBUG]  - included target 2/surefire-reports/io.cdap.directives.column.SetHeaderTest.txt
+[DEBUG]  - included target 2/surefire-reports/io.cdap.wrangler.parser.UsageRegistryTest.txt
+[DEBUG]  - included target 2/surefire-reports/TEST-io.cdap.directives.parser.ParseDateTimeTest.xml
+[DEBUG]  - included target 2/surefire-reports/TEST-io.cdap.wrangler.utils.SchemaConverterTest.xml
+[DEBUG]  - included target 2/surefire-reports/TEST-io.cdap.functions.GeoFenceTest.xml
+[DEBUG]  - included target 2/surefire-reports/io.cdap.wrangler.utils.RecordConvertorTest.txt
+[DEBUG]  - included target 2/surefire-reports/io.cdap.directives.transformation.TextDistanceMeasureTest.txt
+[DEBUG]  - included target 2/surefire-reports/io.cdap.directives.parser.ParseLogTest.txt
+[DEBUG]  - included target 2/surefire-reports/TEST-io.cdap.wrangler.parser.RecipeCompilerTest.xml
+[DEBUG]  - included target 2/surefire-reports/TEST-io.cdap.directives.parser.FixedLengthParserTest.xml
+[DEBUG]  - included target 2/surefire-reports/io.cdap.wrangler.utils.ReferenceNamesTest.txt
+[DEBUG]  - included target 2/surefire-reports/io.cdap.directives.aggregates.SetTransientVariableTest.txt
+[DEBUG]  - included target 2/surefire-reports/io.cdap.wrangler.config.DirectiveConfigTest.txt
+[DEBUG]  - included target 2/surefire-reports/io.cdap.wrangler.parser.NoOpDirectiveContextTest.txt
+[DEBUG]  - included target 2/surefire-reports/TEST-io.cdap.wrangler.registry.CompositeDirectiveRegistryTest.xml
+[DEBUG]  - included target 2/surefire-reports/io.cdap.wrangler.parser.GrammarMigratorTest.txt
+[DEBUG]  - included target 2/surefire-reports/io.cdap.directives.transformation.UpperTest.txt
+[DEBUG]  - included target 2/surefire-reports/TEST-io.cdap.directives.validation.conformers.JsonConformerTest.xml
+[DEBUG]  - included target 2/surefire-reports/TEST-io.cdap.directives.row.RowConditionFilterTest.xml
+[DEBUG]  - included target 2/surefire-reports/TEST-io.cdap.directives.transformation.UrlEncodeTest.xml
+[DEBUG]  - included target 2/surefire-reports/io.cdap.directives.transformation.SplitURLTest.txt
+[DEBUG]  - included target 2/surefire-reports/io.cdap.directives.writer.WriteAsJsonObjectTest.txt
+[DEBUG]  - included target 2/surefire-reports/io.cdap.directives.column.ChangeColCaseNamesTest.txt
+[DEBUG]  - included target 2/surefire-reports/io.cdap.wrangler.utils.StructuredToRowTransformerTest.txt
+[DEBUG]  - included target 2/surefire-reports/io.cdap.wrangler.codec.BinaryAvroDecoderTest.txt
+[DEBUG]  - included target 2/surefire-reports/TEST-io.cdap.directives.parser.ParseSimpleDateTest.xml
+[DEBUG]  - included target 2/surefire-reports/io.cdap.wrangler.clients.SchemaRegistryClientTest.txt
+[DEBUG]  - included target 2/surefire-reports/io.cdap.wrangler.datamodel.HTTPSchemaLoaderTest.txt
+[DEBUG]  - included target 2/surefire-reports/TEST-io.cdap.directives.transformation.ParseTimestampTest.xml
+[DEBUG]  - included target 2/surefire-reports/io.cdap.directives.transformation.SwapTest.txt
+[DEBUG]  - included target 2/surefire-reports/TEST-io.cdap.directives.datetime.FormatDateTimeTest.xml
+[DEBUG]  - included target 2/surefire-reports/io.cdap.wrangler.parser.ConfigDirectiveContextTest.txt
+[DEBUG]  - included target 2/surefire-reports/TEST-io.cdap.wrangler.utils.ObjectSerDeTest.xml
+[DEBUG]  - included target 2/surefire-reports/io.cdap.wrangler.lineage.LineageOperationsTest.txt
+[DEBUG]  - included target 2/surefire-reports/TEST-io.cdap.wrangler.codec.BinaryAvroDecoderTest.xml
+[DEBUG]  - included target 2/surefire-reports/io.cdap.wrangler.codec.ProtobufDecoderUsingDescriptorTest.txt
+[DEBUG]  - included target 2/surefire-reports/TEST-io.cdap.wrangler.expression.ELTest.xml
+[DEBUG]  - included target 2/surefire-reports/io.cdap.directives.transformation.ParseDateTest.txt
+[DEBUG]  - included target 2/surefire-reports/io.cdap.functions.JsonFunctionsTest.txt
+[DEBUG]  - included target 2/surefire-reports/TEST-io.cdap.directives.transformation.ExtractRegexGroupsTest.xml
+[DEBUG]  - included target 2/surefire-reports/io.cdap.directives.transformation.TrimTest.txt
+[DEBUG]  - included target 2/surefire-reports/TEST-io.cdap.directives.transformation.FindAndReplaceTest.xml
+[DEBUG]  - included target 2/surefire-reports/io.cdap.wrangler.utils.KryoSerializerTest.txt
+[DEBUG]  - included target 2/surefire-reports/TEST-io.cdap.wrangler.parser.ConfigDirectiveContextTest.xml
+[DEBUG]  - included target 2/surefire-reports/TEST-io.cdap.functions.DateAndTimeTest.xml
+[DEBUG]  - included target 2/surefire-reports/io.cdap.directives.currency.FormatAsCurrencyTest.txt
+[DEBUG]  - included target 2/surefire-reports/TEST-io.cdap.directives.column.SetHeaderTest.xml
+[DEBUG]  - included target 2/surefire-reports/io.cdap.wrangler.utils.AvroSchemaGlossaryTest.txt
+[DEBUG]  - included target 2/surefire-reports/TEST-io.cdap.directives.parser.ParseExcelTest.xml
+[DEBUG]  - included target 2/surefire-reports/TEST-io.cdap.directives.column.CopyTest.xml
+[DEBUG]  - included target 2/surefire-reports/io.cdap.wrangler.executor.RecipePipelineExecutorTest.txt
+[DEBUG]  - included target 2/surefire-reports/TEST-io.cdap.directives.transformation.TextMetricMeasureTest.xml
+[DEBUG]  - included target 2/surefire-reports/TEST-io.cdap.directives.npl.StemmingTest.xml
+[DEBUG]  - included target 2/surefire-reports/io.cdap.directives.row.RowRegexFilterTest.txt
+[DEBUG]  - included target 2/surefire-reports/TEST-io.cdap.directives.parser.JsParserTest.xml
+[DEBUG]  - included target 2/surefire-reports/TEST-io.cdap.wrangler.validator.ColumnNameValidatorTest.xml
+[DEBUG]  - included target 2/surefire-reports/io.cdap.directives.transformation.EncodeDecodeTest.txt
+[DEBUG]  - included target 2/surefire-reports/io.cdap.wrangler.statistics.BasicStatisticsTest.txt
+[DEBUG]  - included target 2/surefire-reports/io.cdap.wrangler.parser.MapArgumentsTest.txt
+[DEBUG]  - included target 2/surefire-reports/TEST-io.cdap.wrangler.utils.StructuredToRowTransformerTest.xml
+[DEBUG]  - included target 2/surefire-reports/io.cdap.wrangler.parser.MigrateToV2Test.txt
+[DEBUG]  - included target 2/surefire-reports/io.cdap.directives.row.FlattenTest.txt
+[DEBUG]  - included target 2/surefire-reports/TEST-io.cdap.functions.ExpressionTest.xml
+[DEBUG]  - included target 2/surefire-reports/TEST-io.cdap.directives.parser.ParseAvroFileTest.xml
+[DEBUG]  - included target 2/surefire-reports/TEST-io.cdap.directives.currency.ParseAsCurrencyTest.xml
+[DEBUG]  - included target 2/surefire-reports/io.cdap.directives.writer.WriteAsJsonMapTest.txt
+[DEBUG]  - included target 2/surefire-reports/TEST-io.cdap.directives.parser.ParseLogTest.xml
+[DEBUG]  - included target 2/surefire-reports/TEST-io.cdap.directives.writer.WriteAsCSVTest.xml
+[DEBUG]  - included target 2/surefire-reports/io.cdap.wrangler.validator.ColumnNameValidatorTest.txt
+[DEBUG]  - included target 2/surefire-reports/TEST-io.cdap.directives.transformation.EncodeDecodeTest.xml
+[DEBUG]  - included target 2/surefire-reports/TEST-io.cdap.directives.parser.CsvParserTest.xml
+[DEBUG]  - included target 2/surefire-reports/io.cdap.directives.row.SendToErrorTest.txt
+[DEBUG]  - included target 2/surefire-reports/TEST-io.cdap.wrangler.clients.SchemaRegistryClientTest.xml
+[DEBUG]  - included target 2/surefire-reports/TEST-io.cdap.wrangler.codec.ProtobufDecoderUsingDescriptorTest.xml
+[DEBUG]  - included target 2/surefire-reports/TEST-io.cdap.directives.writer.WriteAsJsonMapTest.xml
+[DEBUG]  - included target 2/surefire-reports/TEST-io.cdap.directives.column.KeepTest.xml
+[DEBUG]  - included target 2/surefire-reports/TEST-io.cdap.directives.transformation.LeftTrimTest.xml
+[DEBUG]  - included target 2/surefire-reports/TEST-io.cdap.directives.transformation.TextDistanceMeasureTest.xml
+[DEBUG]  - included target 2/surefire-reports/TEST-io.cdap.wrangler.utils.ArithmeticOperationsTest.xml
+[DEBUG]  - included target 2/surefire-reports/TEST-io.cdap.directives.parser.JsPathTest.xml
+[DEBUG]  - included target 2/surefire-reports/io.cdap.directives.parser.JsParserTest.txt
+[DEBUG]  - included target 2/surefire-reports/TEST-io.cdap.wrangler.executor.RecipePipelineExecutorTest.xml
+[DEBUG]  - included target 2/surefire-reports/io.cdap.directives.parser.CsvParserTest.txt
+[DEBUG]  - included target 2/surefire-reports/TEST-io.cdap.directives.datamodel.DataModelMapColumnTest.xml
+[DEBUG]  - included target 2/surefire-reports/TEST-io.cdap.directives.datetime.CurrentDateTimeTest.xml
+[DEBUG]  - included target 2/surefire-reports/io.cdap.directives.transformation.FindAndReplaceTest.txt
+[DEBUG]  - included target 2/surefire-reports/io.cdap.directives.external.InvokeHttpTest.txt
+[DEBUG]  - included target 2/surefire-reports/io.cdap.directives.transformation.ParseTimestampTest.txt
+[DEBUG]  - included target 2/surefire-reports/io.cdap.directives.transformation.TitleCaseTest.txt
+[DEBUG]  - included target 2/surefire-reports/io.cdap.directives.column.MergeTest.txt
+[DEBUG]  - included target 2/surefire-reports/io.cdap.directives.column.CleanseColumnNamesTest.txt
+[DEBUG]  - included target 2/surefire-reports/TEST-io.cdap.directives.datetime.DateTimeToTimestampTest.xml
+[DEBUG]  - included target 2/surefire-reports/TEST-io.cdap.wrangler.parser.GrammarBasedParserTest.xml
+[DEBUG]  - included target 2/surefire-reports/TEST-io.cdap.directives.lookup.CatalogLookupTest.xml
+[DEBUG]  - included target 2/surefire-reports/TEST-io.cdap.directives.datetime.TimestampToDateTimeTest.xml
+[DEBUG]  - included target 2/surefire-reports/io.cdap.directives.parser.JsPathTest.txt
+[DEBUG]  - included target 2/surefire-reports/io.cdap.wrangler.utils.ObjectSerDeTest.txt
+[DEBUG]  - included target 2/surefire-reports/io.cdap.directives.aggregates.AggregateStatsTest.txt
+[DEBUG]  - included target 2/surefire-reports/TEST-io.cdap.directives.column.FlattenRecordTest.xml
+[DEBUG]  - included target 2/surefire-reports/io.cdap.functions.LogicalTest.txt
+[DEBUG]  - included target 2/surefire-reports/TEST-io.cdap.wrangler.parser.MigrateToV2Test.xml
+[DEBUG]  - included target 2/checkstyle-checker.xml
+[DEBUG]  - included pom.xml
+[DEBUG]  - included rat-debug.log
+[DEBUG]  - included src/test/resources/date-formats-test-sheet.xlsx
+[DEBUG]  - included src/test/resources/user/test_en.properties
+[DEBUG]  - included src/test/resources/addressbook.desc
+[DEBUG]  - included src/test/resources/titanic.xlsx
+[DEBUG]  - included src/test/resources/cdap-log.avro
+[DEBUG]  - included src/test/java/io/cdap/directives/aggregates/SetTransientVariableTest.java
+[DEBUG]  - included src/test/java/io/cdap/directives/aggregates/AggregateStatsTest.java
+[DEBUG]  - included src/test/java/io/cdap/directives/datetime/CurrentDateTimeTest.java
+[DEBUG]  - included src/test/java/io/cdap/directives/datetime/DateTimeToTimestampTest.java
+[DEBUG]  - included src/test/java/io/cdap/directives/datetime/FormatDateTimeTest.java
+[DEBUG]  - included src/test/java/io/cdap/directives/datetime/TimestampToDateTimeTest.java
+[DEBUG]  - included src/test/java/io/cdap/directives/transformation/ParseDateTest.java
+[DEBUG]  - included src/test/java/io/cdap/directives/transformation/LeftTrimTest.java
+[DEBUG]  - included src/test/java/io/cdap/directives/transformation/TextMetricMeasureTest.java
+[DEBUG]  - included src/test/java/io/cdap/directives/transformation/SplitURLTest.java
+[DEBUG]  - included src/test/java/io/cdap/directives/transformation/FillNullOrEmptyTest.java
+[DEBUG]  - included src/test/java/io/cdap/directives/transformation/CharacterCutTest.java
+[DEBUG]  - included src/test/java/io/cdap/directives/transformation/UpperTest.java
+[DEBUG]  - included src/test/java/io/cdap/directives/transformation/MaskNumberTest.java
+[DEBUG]  - included src/test/java/io/cdap/directives/transformation/TrimTest.java
+[DEBUG]  - included src/test/java/io/cdap/directives/transformation/UrlEncodeTest.java
+[DEBUG]  - included src/test/java/io/cdap/directives/transformation/FindAndReplaceTest.java
+[DEBUG]  - included src/test/java/io/cdap/directives/transformation/ExtractRegexGroupsTest.java
+[DEBUG]  - included src/test/java/io/cdap/directives/transformation/SplitEmailTest.java
+[DEBUG]  - included src/test/java/io/cdap/directives/transformation/LowerTest.java
+[DEBUG]  - included src/test/java/io/cdap/directives/transformation/SwapTest.java
+[DEBUG]  - included src/test/java/io/cdap/directives/transformation/MessageHashTest.java
+[DEBUG]  - included src/test/java/io/cdap/directives/transformation/RightTrimTest.java
+[DEBUG]  - included src/test/java/io/cdap/directives/transformation/EncodeDecodeTest.java
+[DEBUG]  - included src/test/java/io/cdap/directives/transformation/QuantizationTest.java
+[DEBUG]  - included src/test/java/io/cdap/directives/transformation/TitleCaseTest.java
+[DEBUG]  - included src/test/java/io/cdap/directives/transformation/GenerateUUIDTest.java
+[DEBUG]  - included src/test/java/io/cdap/directives/transformation/ParseTimestampTest.java
+[DEBUG]  - included src/test/java/io/cdap/directives/transformation/TextDistanceMeasureTest.java
+[DEBUG]  - included src/test/java/io/cdap/directives/lookup/CatalogLookupTest.java
+[DEBUG]  - included src/test/java/io/cdap/directives/column/CopyTest.java
+[DEBUG]  - included src/test/java/io/cdap/directives/column/MergeTest.java
+[DEBUG]  - included src/test/java/io/cdap/directives/column/ChangeColCaseNamesTest.java
+[DEBUG]  - included src/test/java/io/cdap/directives/column/SetHeaderTest.java
+[DEBUG]  - included src/test/java/io/cdap/directives/column/SetTypeTest.java
+[DEBUG]  - included src/test/java/io/cdap/directives/column/ColumnsReplaceTest.java
+[DEBUG]  - included src/test/java/io/cdap/directives/column/KeepTest.java
+[DEBUG]  - included src/test/java/io/cdap/directives/column/CleanseColumnNamesTest.java
+[DEBUG]  - included src/test/java/io/cdap/directives/column/RenameTest.java
+[DEBUG]  - included src/test/java/io/cdap/directives/column/FlattenRecordTest.java
+[DEBUG]  - included src/test/java/io/cdap/directives/column/SplitToColumnsTest.java
+[DEBUG]  - included src/test/java/io/cdap/directives/column/CreateRecordTest.java
+[DEBUG]  - included src/test/java/io/cdap/directives/parser/JsParserTest.java
+[DEBUG]  - included src/test/java/io/cdap/directives/parser/XmlToJsonTest.java
+[DEBUG]  - included src/test/java/io/cdap/directives/parser/HL7ParserTest.java
+[DEBUG]  - included src/test/java/io/cdap/directives/parser/ParseLogTest.java
+[DEBUG]  - included src/test/java/io/cdap/directives/parser/ParseSimpleDateTest.java
+[DEBUG]  - included src/test/java/io/cdap/directives/parser/ParseAvroFileTest.java
+[DEBUG]  - included src/test/java/io/cdap/directives/parser/ParseExcelTest.java
+[DEBUG]  - included src/test/java/io/cdap/directives/parser/ParseDateTimeTest.java
+[DEBUG]  - included src/test/java/io/cdap/directives/parser/ParseAvroTest.java
+[DEBUG]  - included src/test/java/io/cdap/directives/parser/FixedLengthParserTest.java
+[DEBUG]  - included src/test/java/io/cdap/directives/parser/JsPathTest.java
+[DEBUG]  - included src/test/java/io/cdap/directives/parser/CsvParserTest.java
+[DEBUG]  - included src/test/java/io/cdap/directives/row/SendToErrorAndContinueTest.java
+[DEBUG]  - included src/test/java/io/cdap/directives/row/RowRegexFilterTest.java
+[DEBUG]  - included src/test/java/io/cdap/directives/row/SendToErrorTest.java
+[DEBUG]  - included src/test/java/io/cdap/directives/row/SplitToRowsTest.java
+[DEBUG]  - included src/test/java/io/cdap/directives/row/FlattenTest.java
+[DEBUG]  - included src/test/java/io/cdap/directives/row/FailTest.java
+[DEBUG]  - included src/test/java/io/cdap/directives/row/RowConditionFilterTest.java
+[DEBUG]  - included src/test/java/io/cdap/directives/writer/WriteAsJsonObjectTest.java
+[DEBUG]  - included src/test/java/io/cdap/directives/writer/WriteAsJsonMapTest.java
+[DEBUG]  - included src/test/java/io/cdap/directives/writer/WriteAsCSVTest.java
+[DEBUG]  - included src/test/java/io/cdap/directives/external/InvokeHttpTest.java
+[DEBUG]  - included src/test/java/io/cdap/directives/datamodel/DataModelMapColumnTest.java
+[DEBUG]  - included src/test/java/io/cdap/directives/currency/ParseAsCurrencyTest.java
+[DEBUG]  - included src/test/java/io/cdap/directives/currency/FormatAsCurrencyTest.java
+[DEBUG]  - included src/test/java/io/cdap/directives/validation/ValidateStandardTest.java
+[DEBUG]  - included src/test/java/io/cdap/directives/validation/conformers/JsonConformerTest.java
+[DEBUG]  - included src/test/java/io/cdap/directives/npl/StemmingTest.java
+[DEBUG]  - included src/test/java/io/cdap/wrangler/ExperimentTests.java
+[DEBUG]  - included src/test/java/io/cdap/wrangler/statistics/BasicStatisticsTest.java
+[DEBUG]  - included src/test/java/io/cdap/wrangler/clients/SchemaRegistryClientTest.java
+[DEBUG]  - included src/test/java/io/cdap/wrangler/validator/ColumnNameValidatorTest.java
+[DEBUG]  - included src/test/java/io/cdap/wrangler/TestingPipelineContext.java
+[DEBUG]  - included src/test/java/io/cdap/wrangler/config/DirectiveConfigTest.java
+[DEBUG]  - included src/test/java/io/cdap/wrangler/codec/ProtobufDecoderUsingDescriptorTest.java
+[DEBUG]  - included src/test/java/io/cdap/wrangler/codec/BinaryAvroDecoderTest.java
+[DEBUG]  - included src/test/java/io/cdap/wrangler/codec/JsonAvroDecoderTest.java
+[DEBUG]  - included src/test/java/io/cdap/wrangler/utils/StructuredToRowTransformerTest.java
+[DEBUG]  - included src/test/java/io/cdap/wrangler/utils/KryoSerializerTest.java
+[DEBUG]  - included src/test/java/io/cdap/wrangler/utils/ArtifactSummaryComparatorTest.java
+[DEBUG]  - included src/test/java/io/cdap/wrangler/utils/ObjectSerDeTest.java
+[DEBUG]  - included src/test/java/io/cdap/wrangler/utils/AvroSchemaGlossaryTest.java
+[DEBUG]  - included src/test/java/io/cdap/wrangler/utils/ReferenceNamesTest.java
+[DEBUG]  - included src/test/java/io/cdap/wrangler/utils/JsonTestData.java
+[DEBUG]  - included src/test/java/io/cdap/wrangler/utils/SchemaConverterTest.java
+[DEBUG]  - included src/test/java/io/cdap/wrangler/utils/RecordConvertorTest.java
+[DEBUG]  - included src/test/java/io/cdap/wrangler/utils/ArithmeticOperationsTest.java
+[DEBUG]  - included src/test/java/io/cdap/wrangler/parser/RecipeCompilerTest.java
+[DEBUG]  - included src/test/java/io/cdap/wrangler/parser/GrammarBasedParserTest.java
+[DEBUG]  - included src/test/java/io/cdap/wrangler/parser/MapArgumentsTest.java
+[DEBUG]  - included src/test/java/io/cdap/wrangler/parser/MigrateToV2Test.java
+[DEBUG]  - included src/test/java/io/cdap/wrangler/parser/GrammarMigratorTest.java
+[DEBUG]  - included src/test/java/io/cdap/wrangler/parser/NoOpDirectiveContextTest.java
+[DEBUG]  - included src/test/java/io/cdap/wrangler/parser/UsageRegistryTest.java
+[DEBUG]  - included src/test/java/io/cdap/wrangler/parser/ConfigDirectiveContextTest.java
+[DEBUG]  - included src/test/java/io/cdap/wrangler/dq/ConvertDistancesTest.java
+[DEBUG]  - included src/test/java/io/cdap/wrangler/dq/ConvertStringTest.java
+[DEBUG]  - included src/test/java/io/cdap/wrangler/lineage/LineageOperationsTest.java
+[DEBUG]  - included src/test/java/io/cdap/wrangler/registry/SystemDirectiveRegistryTest.java
+[DEBUG]  - included src/test/java/io/cdap/wrangler/registry/CompositeDirectiveRegistryTest.java
+[DEBUG]  - included src/test/java/io/cdap/wrangler/executor/RecipePipelineExecutorTest.java
+[DEBUG]  - included src/test/java/io/cdap/wrangler/executor/SchemaGenerationTest.java
+[DEBUG]  - included src/test/java/io/cdap/wrangler/expression/ELTest.java
+[DEBUG]  - included src/test/java/io/cdap/wrangler/i18n/MessagesTest.java
+[DEBUG]  - included src/test/java/io/cdap/wrangler/datamodel/HTTPSchemaLoaderTest.java
+[DEBUG]  - included src/test/java/io/cdap/wrangler/TestingRig.java
+[DEBUG]  - included src/test/java/io/cdap/functions/DDLTest.java
+[DEBUG]  - included src/test/java/io/cdap/functions/DateAndTimeTest.java
+[DEBUG]  - included src/test/java/io/cdap/functions/ExpressionTest.java
+[DEBUG]  - included src/test/java/io/cdap/functions/NumberFunctionsTest.java
+[DEBUG]  - included src/test/java/io/cdap/functions/GlobalTest.java
+[DEBUG]  - included src/test/java/io/cdap/functions/LogicalTest.java
+[DEBUG]  - included src/test/java/io/cdap/functions/JsonFunctionsTest.java
+[DEBUG]  - included src/test/java/io/cdap/functions/DataQualityTest.java
+[DEBUG]  - included src/test/java/io/cdap/functions/GeoFenceTest.java
+[DEBUG]  - included src/test/java/com/example/tutorial/AddressBookProtos.java
+[DEBUG]  - included src/main/resources/reserved-column-names.txt
+[DEBUG]  - included src/main/resources/.properties
+[DEBUG]  - included src/main/resources/user/messages_en.properties
+[DEBUG]  - included src/main/resources/icd-9_cm_codes.txt
+[DEBUG]  - included src/main/resources/schemas/hl7-fhir-r4.json
+[DEBUG]  - included src/main/resources/schemas/manifest.json
+[DEBUG]  - included src/main/resources/wrangler-finder.xml
+[DEBUG]  - included src/main/resources/TimeRegexes.txt
+[DEBUG]  - included src/main/resources/DateRegexesGrouped.txt
+[DEBUG]  - included src/main/resources/icd-10-2016_cm_codes.txt
+[DEBUG]  - included src/main/resources/icd-10-2017_cm_codes.txt
+[DEBUG]  - included src/main/resources/stylesheet.xml
+[DEBUG]  - included src/main/java/io/cdap/directives/aggregates/SetTransientVariable.java
+[DEBUG]  - included src/main/java/io/cdap/directives/aggregates/AggregateStats.java
+[DEBUG]  - included src/main/java/io/cdap/directives/aggregates/DefaultTransientStore.java
+[DEBUG]  - included src/main/java/io/cdap/directives/aggregates/IncrementTransientVariable.java
+[DEBUG]  - included src/main/java/io/cdap/directives/datetime/DateTimeToTimeStamp.java
+[DEBUG]  - included src/main/java/io/cdap/directives/datetime/FormatDateTime.java
+[DEBUG]  - included src/main/java/io/cdap/directives/datetime/CurrentDateTime.java
+[DEBUG]  - included src/main/java/io/cdap/directives/datetime/TimestampToDateTime.java
+[DEBUG]  - included src/main/java/io/cdap/directives/transformation/TextMetricMeasure.java
+[DEBUG]  - included src/main/java/io/cdap/directives/transformation/FillNullOrEmpty.java
+[DEBUG]  - included src/main/java/io/cdap/directives/transformation/UrlDecode.java
+[DEBUG]  - included src/main/java/io/cdap/directives/transformation/Split.java
+[DEBUG]  - included src/main/java/io/cdap/directives/transformation/GenerateUUID.java
+[DEBUG]  - included src/main/java/io/cdap/directives/transformation/TextDistanceMeasure.java
+[DEBUG]  - included src/main/java/io/cdap/directives/transformation/SplitEmail.java
+[DEBUG]  - included src/main/java/io/cdap/directives/transformation/Lower.java
+[DEBUG]  - included src/main/java/io/cdap/directives/transformation/ExtractRegexGroups.java
+[DEBUG]  - included src/main/java/io/cdap/directives/transformation/MaskNumber.java
+[DEBUG]  - included src/main/java/io/cdap/directives/transformation/TitleCase.java
+[DEBUG]  - included src/main/java/io/cdap/directives/transformation/LeftTrim.java
+[DEBUG]  - included src/main/java/io/cdap/directives/transformation/RightTrim.java
+[DEBUG]  - included src/main/java/io/cdap/directives/transformation/UrlEncode.java
+[DEBUG]  - included src/main/java/io/cdap/directives/transformation/Trim.java
+[DEBUG]  - included src/main/java/io/cdap/directives/transformation/Decode.java
+[DEBUG]  - included src/main/java/io/cdap/directives/transformation/ColumnExpression.java
+[DEBUG]  - included src/main/java/io/cdap/directives/transformation/Upper.java
+[DEBUG]  - included src/main/java/io/cdap/directives/transformation/Quantization.java
+[DEBUG]  - included src/main/java/io/cdap/directives/transformation/MessageHash.java
+[DEBUG]  - included src/main/java/io/cdap/directives/transformation/SplitURL.java
+[DEBUG]  - included src/main/java/io/cdap/directives/transformation/Trimmer.java
+[DEBUG]  - included src/main/java/io/cdap/directives/transformation/IndexSplit.java
+[DEBUG]  - included src/main/java/io/cdap/directives/transformation/CharacterCut.java
+[DEBUG]  - included src/main/java/io/cdap/directives/transformation/FindAndReplace.java
+[DEBUG]  - included src/main/java/io/cdap/directives/transformation/Encode.java
+[DEBUG]  - included src/main/java/io/cdap/directives/transformation/MaskShuffle.java
+[DEBUG]  - included src/main/java/io/cdap/directives/date/FormatDate.java
+[DEBUG]  - included src/main/java/io/cdap/directives/date/DiffDate.java
+[DEBUG]  - included src/main/java/io/cdap/directives/lookup/CatalogLookup.java
+[DEBUG]  - included src/main/java/io/cdap/directives/lookup/StaticCatalog.java
+[DEBUG]  - included src/main/java/io/cdap/directives/lookup/TableLookup.java
+[DEBUG]  - included src/main/java/io/cdap/directives/language/SetCharset.java
+[DEBUG]  - included src/main/java/io/cdap/directives/column/SetType.java
+[DEBUG]  - included src/main/java/io/cdap/directives/column/SetHeader.java
+[DEBUG]  - included src/main/java/io/cdap/directives/column/Merge.java
+[DEBUG]  - included src/main/java/io/cdap/directives/column/Drop.java
+[DEBUG]  - included src/main/java/io/cdap/directives/column/ColumnsReplace.java
+[DEBUG]  - included src/main/java/io/cdap/directives/column/FlattenRecord.java
+[DEBUG]  - included src/main/java/io/cdap/directives/column/Rename.java
+[DEBUG]  - included src/main/java/io/cdap/directives/column/Swap.java
+[DEBUG]  - included src/main/java/io/cdap/directives/column/SplitToColumns.java
+[DEBUG]  - included src/main/java/io/cdap/directives/column/ChangeColCaseNames.java
+[DEBUG]  - included src/main/java/io/cdap/directives/column/Copy.java
+[DEBUG]  - included src/main/java/io/cdap/directives/column/CreateRecord.java
+[DEBUG]  - included src/main/java/io/cdap/directives/column/Keep.java
+[DEBUG]  - included src/main/java/io/cdap/directives/column/CleanseColumnNames.java
+[DEBUG]  - included src/main/java/io/cdap/directives/parser/CsvParser.java
+[DEBUG]  - included src/main/java/io/cdap/directives/parser/ParseDate.java
+[DEBUG]  - included src/main/java/io/cdap/directives/parser/FixedLengthParser.java
+[DEBUG]  - included src/main/java/io/cdap/directives/parser/ParseLog.java
+[DEBUG]  - included src/main/java/io/cdap/directives/parser/JsParser.java
+[DEBUG]  - included src/main/java/io/cdap/directives/parser/ParseTimestamp.java
+[DEBUG]  - included src/main/java/io/cdap/directives/parser/ParseAvro.java
+[DEBUG]  - included src/main/java/io/cdap/directives/parser/ParseExcel.java
+[DEBUG]  - included src/main/java/io/cdap/directives/parser/ParseSimpleDate.java
+[DEBUG]  - included src/main/java/io/cdap/directives/parser/ParseAvroFile.java
+[DEBUG]  - included src/main/java/io/cdap/directives/parser/ParseProtobuf.java
+[DEBUG]  - included src/main/java/io/cdap/directives/parser/ParseDateTime.java
+[DEBUG]  - included src/main/java/io/cdap/directives/parser/JsPath.java
+[DEBUG]  - included src/main/java/io/cdap/directives/parser/HL7Parser.java
+[DEBUG]  - included src/main/java/io/cdap/directives/xml/XmlToJson.java
+[DEBUG]  - included src/main/java/io/cdap/directives/row/Fail.java
+[DEBUG]  - included src/main/java/io/cdap/directives/row/RecordRegexFilter.java
+[DEBUG]  - included src/main/java/io/cdap/directives/row/SendToErrorAndContinue.java
+[DEBUG]  - included src/main/java/io/cdap/directives/row/Flatten.java
+[DEBUG]  - included src/main/java/io/cdap/directives/row/SetRecordDelimiter.java
+[DEBUG]  - included src/main/java/io/cdap/directives/row/SplitToRows.java
+[DEBUG]  - included src/main/java/io/cdap/directives/row/SendToError.java
+[DEBUG]  - included src/main/java/io/cdap/directives/row/RecordConditionFilter.java
+[DEBUG]  - included src/main/java/io/cdap/directives/row/RecordMissingOrNullFilter.java
+[DEBUG]  - included src/main/java/io/cdap/directives/writer/WriteAsJsonMap.java
+[DEBUG]  - included src/main/java/io/cdap/directives/writer/WriteAsJsonObject.java
+[DEBUG]  - included src/main/java/io/cdap/directives/writer/WriteAsCSV.java
+[DEBUG]  - included src/main/java/io/cdap/directives/nlp/internal/PorterStemmer.java
+[DEBUG]  - included src/main/java/io/cdap/directives/nlp/Stemming.java
+[DEBUG]  - included src/main/java/io/cdap/directives/external/InvokeHttp.java
+[DEBUG]  - included src/main/java/io/cdap/directives/datamodel/DataModelMapColumn.java
+[DEBUG]  - included src/main/java/io/cdap/directives/currency/FormatAsCurrency.java
+[DEBUG]  - included src/main/java/io/cdap/directives/currency/ParseAsCurrency.java
+[DEBUG]  - included src/main/java/io/cdap/directives/validation/ValidateStandard.java
+[DEBUG]  - included src/main/java/io/cdap/directives/validation/ConformanceIssue.java
+[DEBUG]  - included src/main/java/io/cdap/directives/validation/conformers/JsonConformer.java
+[DEBUG]  - included src/main/java/io/cdap/directives/validation/conformers/Conformer.java
+[DEBUG]  - included src/main/java/io/cdap/wrangler/statistics/BasicStatistics.java
+[DEBUG]  - included src/main/java/io/cdap/wrangler/statistics/ColumnMetric.java
+[DEBUG]  - included src/main/java/io/cdap/wrangler/statistics/Statistics.java
+[DEBUG]  - included src/main/java/io/cdap/wrangler/statistics/Measurements.java
+[DEBUG]  - included src/main/java/io/cdap/wrangler/metrics/JexlCategoryMetricUtils.java
+[DEBUG]  - included src/main/java/io/cdap/wrangler/metrics/Constants.java
+[DEBUG]  - included src/main/java/io/cdap/wrangler/clients/Response.java
+[DEBUG]  - included src/main/java/io/cdap/wrangler/clients/SchemaInfo.java
+[DEBUG]  - included src/main/java/io/cdap/wrangler/clients/RestClientException.java
+[DEBUG]  - included src/main/java/io/cdap/wrangler/clients/SchemaRegistryClient.java
+[DEBUG]  - included src/main/java/io/cdap/wrangler/validator/ColumnNameValidator.java
+[DEBUG]  - included src/main/java/io/cdap/wrangler/validator/Validator.java
+[DEBUG]  - included src/main/java/io/cdap/wrangler/validator/ValidatorException.java
+[DEBUG]  - included src/main/java/io/cdap/wrangler/codec/DecoderException.java
+[DEBUG]  - included src/main/java/io/cdap/wrangler/codec/AbstractAvroDecoder.java
+[DEBUG]  - included src/main/java/io/cdap/wrangler/codec/BinaryAvroDecoder.java
+[DEBUG]  - included src/main/java/io/cdap/wrangler/codec/Decoder.java
+[DEBUG]  - included src/main/java/io/cdap/wrangler/codec/JsonAvroDecoder.java
+[DEBUG]  - included src/main/java/io/cdap/wrangler/codec/ProtobufDecoderUsingDescriptor.java
+[DEBUG]  - included src/main/java/io/cdap/wrangler/sampling/Bernoulli.java
+[DEBUG]  - included src/main/java/io/cdap/wrangler/sampling/SamplingIterator.java
+[DEBUG]  - included src/main/java/io/cdap/wrangler/sampling/MathUtils.java
+[DEBUG]  - included src/main/java/io/cdap/wrangler/sampling/Sampler.java
+[DEBUG]  - included src/main/java/io/cdap/wrangler/sampling/Reservoir.java
+[DEBUG]  - included src/main/java/io/cdap/wrangler/sampling/Poisson.java
+[DEBUG]  - included src/main/java/io/cdap/wrangler/sampling/XORShiftRNG.java
+[DEBUG]  - included src/main/java/io/cdap/wrangler/utils/JsonPathGenerator.java
+[DEBUG]  - included src/main/java/io/cdap/wrangler/utils/DecimalTransform.java
+[DEBUG]  - included src/main/java/io/cdap/wrangler/utils/RecordConvertor.java
+[DEBUG]  - included src/main/java/io/cdap/wrangler/utils/AvroSchemaLoader.java
+[DEBUG]  - included src/main/java/io/cdap/wrangler/utils/ReferenceNames.java
+[DEBUG]  - included src/main/java/io/cdap/wrangler/utils/Manifest.java
+[DEBUG]  - included src/main/java/io/cdap/wrangler/utils/StructuredToRowTransformer.java
+[DEBUG]  - included src/main/java/io/cdap/wrangler/utils/AvroSchemaGlossary.java
+[DEBUG]  - included src/main/java/io/cdap/wrangler/utils/RowHelper.java
+[DEBUG]  - included src/main/java/io/cdap/wrangler/utils/StructuredRecordJsonConverter.java
+[DEBUG]  - included src/main/java/io/cdap/wrangler/utils/KryoSerializer.java
+[DEBUG]  - included src/main/java/io/cdap/wrangler/utils/ArithmeticOperations.java
+[DEBUG]  - included src/main/java/io/cdap/wrangler/utils/RecordConvertorException.java
+[DEBUG]  - included src/main/java/io/cdap/wrangler/utils/ColumnConverter.java
+[DEBUG]  - included src/main/java/io/cdap/wrangler/utils/ArtifactSummaryComparator.java
+[DEBUG]  - included src/main/java/io/cdap/wrangler/utils/TypeConvertor.java
+[DEBUG]  - included src/main/java/io/cdap/wrangler/utils/ProjectInfo.java
+[DEBUG]  - included src/main/java/io/cdap/wrangler/utils/ObjectSerDe.java
+[DEBUG]  - included src/main/java/io/cdap/wrangler/utils/SchemaConverter.java
+[DEBUG]  - included src/main/java/io/cdap/wrangler/parser/NoOpDirectiveContext.java
+[DEBUG]  - included src/main/java/io/cdap/wrangler/parser/RecipeCompiler.java
+[DEBUG]  - included src/main/java/io/cdap/wrangler/parser/MapArguments.java
+[DEBUG]  - included src/main/java/io/cdap/wrangler/parser/GrammarWalker.java
+[DEBUG]  - included src/main/java/io/cdap/wrangler/parser/SyntaxErrorListener.java
+[DEBUG]  - included src/main/java/io/cdap/wrangler/parser/UsageRegistry.java
+[DEBUG]  - included src/main/java/io/cdap/wrangler/parser/ConfigDirectiveContext.java
+[DEBUG]  - included src/main/java/io/cdap/wrangler/parser/MigrateToV2.java
+[DEBUG]  - included src/main/java/io/cdap/wrangler/parser/RecipeVisitor.java
+[DEBUG]  - included src/main/java/io/cdap/wrangler/parser/GrammarBasedParser.java
+[DEBUG]  - included src/main/java/io/cdap/wrangler/parser/DirectiveClass.java
+[DEBUG]  - included src/main/java/io/cdap/wrangler/schema/DirectiveSchemaResolutionContext.java
+[DEBUG]  - included src/main/java/io/cdap/wrangler/schema/TransientStoreKeys.java
+[DEBUG]  - included src/main/java/io/cdap/wrangler/schema/DirectiveOutputSchemaGenerator.java
+[DEBUG]  - included src/main/java/io/cdap/wrangler/dq/ConvertString.java
+[DEBUG]  - included src/main/java/io/cdap/wrangler/dq/ConvertDistances.java
+[DEBUG]  - included src/main/java/io/cdap/wrangler/dq/DataType.java
+[DEBUG]  - included src/main/java/io/cdap/wrangler/dq/TypeInference.java
+[DEBUG]  - included src/main/java/io/cdap/wrangler/dq/DateTimePattern.java
+[DEBUG]  - included src/main/java/io/cdap/wrangler/lineage/LineageOperations.java
+[DEBUG]  - included src/main/java/io/cdap/wrangler/registry/DirectiveInfo.java
+[DEBUG]  - included src/main/java/io/cdap/wrangler/registry/UserDirectiveRegistry.java
+[DEBUG]  - included src/main/java/io/cdap/wrangler/registry/SystemDirectiveRegistry.java
+[DEBUG]  - included src/main/java/io/cdap/wrangler/registry/DirectiveScope.java
+[DEBUG]  - included src/main/java/io/cdap/wrangler/registry/DirectiveRegistry.java
+[DEBUG]  - included src/main/java/io/cdap/wrangler/registry/CompositeDirectiveRegistry.java
+[DEBUG]  - included src/main/java/io/cdap/wrangler/executor/ErrorRecordCollector.java
+[DEBUG]  - included src/main/java/io/cdap/wrangler/executor/RecipePipelineExecutor.java
+[DEBUG]  - included src/main/java/io/cdap/wrangler/executor/ICDCatalog.java
+[DEBUG]  - included src/main/java/io/cdap/wrangler/expression/ELException.java
+[DEBUG]  - included src/main/java/io/cdap/wrangler/expression/ELRegistration.java
+[DEBUG]  - included src/main/java/io/cdap/wrangler/expression/EL.java
+[DEBUG]  - included src/main/java/io/cdap/wrangler/expression/ELResult.java
+[DEBUG]  - included src/main/java/io/cdap/wrangler/expression/ELContext.java
+[DEBUG]  - included src/main/java/io/cdap/wrangler/i18n/MessagesFactory.java
+[DEBUG]  - included src/main/java/io/cdap/wrangler/i18n/Messages.java
+[DEBUG]  - included src/main/java/io/cdap/wrangler/datamodel/DataModelGlossary.java
+[DEBUG]  - included src/main/java/io/cdap/wrangler/datamodel/HTTPSchemaLoader.java
+[DEBUG]  - included src/main/java/io/cdap/functions/DateAndTime.java
+[DEBUG]  - included src/main/java/io/cdap/functions/DataQuality.java
+[DEBUG]  - included src/main/java/io/cdap/functions/JsonFunctions.java
+[DEBUG]  - included src/main/java/io/cdap/functions/DDL.java
+[DEBUG]  - included src/main/java/io/cdap/functions/Global.java
+[DEBUG]  - included src/main/java/io/cdap/functions/NumberFunctions.java
+[DEBUG]  - included src/main/java/io/cdap/functions/Types.java
+[DEBUG]  - included src/main/java/io/cdap/functions/Logical.java
+[DEBUG]  - included src/main/java/io/cdap/functions/GeoFences.java
+[DEBUG]  - included src/main/java/io/cdap/functions/Dates.java
+[DEBUG]  - included src/main/antlr4/io/cdap/wrangler/parser/Directives.g4
+[INFO] Rat check: Summary of files. Unapproved: 256 unknown: 256 generated: 0 approved: 309 licence.
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD FAILURE
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  8.921 s
+[INFO] Finished at: 2025-04-12T15:18:29+05:30
+[INFO] ------------------------------------------------------------------------
+[ERROR] Failed to execute goal org.apache.rat:apache-rat-plugin:0.10:check (default-cli) on project wrangler-core: Too many files with unapproved license: 256 See RAT report in: /Users/dakshrana/Desktop/wrangler/wrangler-core/target/rat.txt -> [Help 1]
+org.apache.maven.lifecycle.LifecycleExecutionException: Failed to execute goal org.apache.rat:apache-rat-plugin:0.10:check (default-cli) on project wrangler-core: Too many files with unapproved license: 256 See RAT report in: /Users/dakshrana/Desktop/wrangler/wrangler-core/target/rat.txt
+    at org.apache.maven.lifecycle.internal.MojoExecutor.doExecute2 (MojoExecutor.java:333)
+    at org.apache.maven.lifecycle.internal.MojoExecutor.doExecute (MojoExecutor.java:316)
+    at org.apache.maven.lifecycle.internal.MojoExecutor.execute (MojoExecutor.java:212)
+    at org.apache.maven.lifecycle.internal.MojoExecutor.execute (MojoExecutor.java:174)
+    at org.apache.maven.lifecycle.internal.MojoExecutor.access$000 (MojoExecutor.java:75)
+    at org.apache.maven.lifecycle.internal.MojoExecutor$1.run (MojoExecutor.java:162)
+    at org.apache.maven.plugin.DefaultMojosExecutionStrategy.execute (DefaultMojosExecutionStrategy.java:39)
+    at org.apache.maven.lifecycle.internal.MojoExecutor.execute (MojoExecutor.java:159)
+    at org.apache.maven.lifecycle.internal.LifecycleModuleBuilder.buildProject (LifecycleModuleBuilder.java:105)
+    at org.apache.maven.lifecycle.internal.LifecycleModuleBuilder.buildProject (LifecycleModuleBuilder.java:73)
+    at org.apache.maven.lifecycle.internal.builder.singlethreaded.SingleThreadedBuilder.build (SingleThreadedBuilder.java:53)
+    at org.apache.maven.lifecycle.internal.LifecycleStarter.execute (LifecycleStarter.java:118)
+    at org.apache.maven.DefaultMaven.doExecute (DefaultMaven.java:261)
+    at org.apache.maven.DefaultMaven.doExecute (DefaultMaven.java:173)
+    at org.apache.maven.DefaultMaven.execute (DefaultMaven.java:101)
+    at org.apache.maven.cli.MavenCli.execute (MavenCli.java:906)
+    at org.apache.maven.cli.MavenCli.doMain (MavenCli.java:283)
+    at org.apache.maven.cli.MavenCli.main (MavenCli.java:206)
+    at jdk.internal.reflect.DirectMethodHandleAccessor.invoke (DirectMethodHandleAccessor.java:103)
+    at java.lang.reflect.Method.invoke (Method.java:580)
+    at org.codehaus.plexus.classworlds.launcher.Launcher.launchEnhanced (Launcher.java:255)
+    at org.codehaus.plexus.classworlds.launcher.Launcher.launch (Launcher.java:201)
+    at org.codehaus.plexus.classworlds.launcher.Launcher.mainWithExitCode (Launcher.java:361)
+    at org.codehaus.plexus.classworlds.launcher.Launcher.main (Launcher.java:314)
+Caused by: org.apache.rat.mp.RatCheckException: Too many files with unapproved license: 256 See RAT report in: /Users/dakshrana/Desktop/wrangler/wrangler-core/target/rat.txt
+    at org.apache.rat.mp.RatCheckMojo.check (RatCheckMojo.java:183)
+    at org.apache.rat.mp.RatCheckMojo.execute (RatCheckMojo.java:171)
+    at org.apache.maven.plugin.DefaultBuildPluginManager.executeMojo (DefaultBuildPluginManager.java:126)
+    at org.apache.maven.lifecycle.internal.MojoExecutor.doExecute2 (MojoExecutor.java:328)
+    at org.apache.maven.lifecycle.internal.MojoExecutor.doExecute (MojoExecutor.java:316)
+    at org.apache.maven.lifecycle.internal.MojoExecutor.execute (MojoExecutor.java:212)
+    at org.apache.maven.lifecycle.internal.MojoExecutor.execute (MojoExecutor.java:174)
+    at org.apache.maven.lifecycle.internal.MojoExecutor.access$000 (MojoExecutor.java:75)
+    at org.apache.maven.lifecycle.internal.MojoExecutor$1.run (MojoExecutor.java:162)
+    at org.apache.maven.plugin.DefaultMojosExecutionStrategy.execute (DefaultMojosExecutionStrategy.java:39)
+    at org.apache.maven.lifecycle.internal.MojoExecutor.execute (MojoExecutor.java:159)
+    at org.apache.maven.lifecycle.internal.LifecycleModuleBuilder.buildProject (LifecycleModuleBuilder.java:105)
+    at org.apache.maven.lifecycle.internal.LifecycleModuleBuilder.buildProject (LifecycleModuleBuilder.java:73)
+    at org.apache.maven.lifecycle.internal.builder.singlethreaded.SingleThreadedBuilder.build (SingleThreadedBuilder.java:53)
+    at org.apache.maven.lifecycle.internal.LifecycleStarter.execute (LifecycleStarter.java:118)
+    at org.apache.maven.DefaultMaven.doExecute (DefaultMaven.java:261)
+    at org.apache.maven.DefaultMaven.doExecute (DefaultMaven.java:173)
+    at org.apache.maven.DefaultMaven.execute (DefaultMaven.java:101)
+    at org.apache.maven.cli.MavenCli.execute (MavenCli.java:906)
+    at org.apache.maven.cli.MavenCli.doMain (MavenCli.java:283)
+    at org.apache.maven.cli.MavenCli.main (MavenCli.java:206)
+    at jdk.internal.reflect.DirectMethodHandleAccessor.invoke (DirectMethodHandleAccessor.java:103)
+    at java.lang.reflect.Method.invoke (Method.java:580)
+    at org.codehaus.plexus.classworlds.launcher.Launcher.launchEnhanced (Launcher.java:255)
+    at org.codehaus.plexus.classworlds.launcher.Launcher.launch (Launcher.java:201)
+    at org.codehaus.plexus.classworlds.launcher.Launcher.mainWithExitCode (Launcher.java:361)
+    at org.codehaus.plexus.classworlds.launcher.Launcher.main (Launcher.java:314)
+[ERROR] 
+[ERROR] 
+[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException
+[DEBUG] Shutting down adapter factory; available factories [file-lock, rwlock-local, semaphore-local, noop]; available name mappers [discriminating, file-gav, file-hgav, file-static, gav, static]
+[DEBUG] Shutting down 'file-lock' factory
+[DEBUG] Shutting down 'rwlock-local' factory
+[DEBUG] Shutting down 'semaphore-local' factory
+[DEBUG] Shutting down 'noop' factory

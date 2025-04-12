@@ -1,0 +1,12 @@
+-------------------------------------------------------------------------------
+Test set: io.cdap.wrangler.registry.CompositeDirectiveRegistryTest
+-------------------------------------------------------------------------------
+Tests run: 1, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 0.001 sec <<< FAILURE!
+testIteratorUsage(io.cdap.wrangler.registry.CompositeDirectiveRegistryTest)  Time elapsed: 0.001 sec  <<< FAILURE!
+java.lang.AssertionError: expected:<85> but was:<86>
+	at org.junit.Assert.fail(Assert.java:88)
+	at org.junit.Assert.failNotEquals(Assert.java:834)
+	at org.junit.Assert.assertEquals(Assert.java:645)
+	at org.junit.Assert.assertEquals(Assert.java:631)
+	at io.cdap.wrangler.registry.CompositeDirectiveRegistryTest.testIteratorUsage(CompositeDirectiveRegistryTest.java:127)
+

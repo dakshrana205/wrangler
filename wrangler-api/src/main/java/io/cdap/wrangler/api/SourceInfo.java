@@ -23,22 +23,38 @@ import com.google.gson.JsonObject;
  * Class description here.
  */
 public final class SourceInfo {
-  private final int lineno;
-  private final int colno;
+  private final int startLine;
+  private final int startCol;
+  private final int endLine;
+  private final int endCol;
   private final String source;
 
   public SourceInfo(int lineno, int colno, String source) {
-    this.lineno = lineno;
-    this.colno = colno;
+    this(lineno, colno, lineno, colno, source);
+  }
+
+  public SourceInfo(int startLine, int startCol, int endLine, int endCol, String source) {
+    this.startLine = startLine;
+    this.startCol = startCol;
+    this.endLine = endLine;
+    this.endCol = endCol;
     this.source = source;
   }
 
   public int getLineNumber() {
-    return lineno;
+    return startLine;
   }
 
   public int getColumnNumber() {
-    return colno;
+    return startCol;
+  }
+
+  public int getEndLineNumber() {
+    return endLine;
+  }
+
+  public int getEndColumnNumber() {
+    return endCol;
   }
 
   public String getSource() {
@@ -47,13 +63,18 @@ public final class SourceInfo {
 
   @Override
   public String toString() {
-    return String.format("%3d:%-3d - '%s'", lineno, colno, source);
+    if (startLine == endLine && startCol == endCol) {
+      return String.format("%3d:%-3d - '%s'", startLine, startCol, source);
+    }
+    return String.format("%3d:%-3d-%3d:%-3d - '%s'", startLine, startCol, endLine, endCol, source);
   }
 
   public JsonElement toJson() {
     JsonObject object = new JsonObject();
-    object.addProperty("line", lineno);
-    object.addProperty("column", colno);
+    object.addProperty("startLine", startLine);
+    object.addProperty("startColumn", startCol);
+    object.addProperty("endLine", endLine);
+    object.addProperty("endColumn", endCol);
     object.addProperty("source", source);
     return object;
   }

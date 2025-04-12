@@ -16,7 +16,6 @@
 
 package io.cdap.directives.row;
 
-import com.google.common.collect.ImmutableList;
 import io.cdap.cdap.api.annotation.Description;
 import io.cdap.cdap.api.annotation.Name;
 import io.cdap.cdap.api.annotation.Plugin;
@@ -24,18 +23,12 @@ import io.cdap.wrangler.api.Arguments;
 import io.cdap.wrangler.api.Directive;
 import io.cdap.wrangler.api.DirectiveExecutionException;
 import io.cdap.wrangler.api.DirectiveParseException;
-import io.cdap.wrangler.api.EntityCountMetric;
+import io.cdap.wrangler.api.ErrorRowException;
 import io.cdap.wrangler.api.ExecutorContext;
-import io.cdap.wrangler.api.Optional;
-import io.cdap.wrangler.api.ReportErrorAndProceed;
 import io.cdap.wrangler.api.Row;
 import io.cdap.wrangler.api.TransientVariableScope;
 import io.cdap.wrangler.api.annotations.Categories;
-import io.cdap.wrangler.api.lineage.Lineage;
-import io.cdap.wrangler.api.lineage.Mutation;
 import io.cdap.wrangler.api.parser.Expression;
-import io.cdap.wrangler.api.parser.Identifier;
-import io.cdap.wrangler.api.parser.Text;
 import io.cdap.wrangler.api.parser.TokenType;
 import io.cdap.wrangler.api.parser.UsageDefinition;
 import io.cdap.wrangler.expression.EL;
@@ -43,54 +36,39 @@ import io.cdap.wrangler.expression.ELContext;
 import io.cdap.wrangler.expression.ELException;
 import io.cdap.wrangler.expression.ELResult;
 
-import java.util.ArrayList;
 import java.util.List;
 
-import static io.cdap.wrangler.metrics.JexlCategoryMetricUtils.getJexlCategoryMetric;
-
 /**
- * A directive for erroring the record if
- *
- * <p>
- *   This step will evaluate the condition, if the condition evaluates to
- *   true, then the row will be skipped. If the condition evaluates to
- *   false, then the row will be accepted.
- * </p>
+ * A directive for sending records to error collector based on condition.
  */
 @Plugin(type = Directive.TYPE)
-@Name(SendToErrorAndContinue.NAME)
+@Name("send-to-error-and-continue")
 @Categories(categories = { "row", "data-quality"})
-@Description("Send records that match condition to the error collector and continues processing.")
-public class SendToErrorAndContinue implements Directive, Lineage {
+@Description("Sends a row to error and continues processing if condition is true")
+public class SendToErrorAndContinue implements Directive {
   public static final String NAME = "send-to-error-and-continue";
-  private EL el;
   private String condition;
-  private String metric = null;
-  private String message = null;
+  private String message;
+  private EL conditionExpr;
+  private EL messageExpr;
 
   @Override
   public UsageDefinition define() {
     UsageDefinition.Builder builder = UsageDefinition.builder(NAME);
     builder.define("condition", TokenType.EXPRESSION);
-    builder.define("metric", TokenType.IDENTIFIER, Optional.TRUE);
-    builder.define("message", TokenType.TEXT, Optional.TRUE);
+    builder.define("message", TokenType.EXPRESSION);
     return builder.build();
   }
 
   @Override
   public void initialize(Arguments args) throws DirectiveParseException {
     condition = ((Expression) args.value("condition")).value();
+    message = ((Expression) args.value("message")).value();
     try {
-      el = EL.compile(condition);
+      this.conditionExpr = EL.compile(condition);
+      this.messageExpr = EL.compile(message);
     } catch (ELException e) {
-      throw new DirectiveParseException(
-        NAME, String.format("Invalid condition '%s'.", condition), e);
-    }
-    if (args.contains("metric")) {
-      metric = ((Identifier) args.value("metric")).value();
-    }
-    if (args.contains("message")) {
-      message = ((Text) args.value("message")).value();
+      throw new DirectiveParseException(NAME, e.getMessage(), e);
     }
   }
 
@@ -101,52 +79,42 @@ public class SendToErrorAndContinue implements Directive, Lineage {
 
   @Override
   public List<Row> execute(List<Row> rows, ExecutorContext context)
-    throws DirectiveExecutionException, ReportErrorAndProceed {
-    if (context != null) {
-      context.getTransientStore().increment(TransientVariableScope.LOCAL, "dq_total", 1);
-    }
-    List<Row> results = new ArrayList<>();
+      throws DirectiveExecutionException, ErrorRowException {
     for (Row row : rows) {
-      // Move the fields from the row into the context.
-      ELContext ctx = new ELContext(context, el, row);
-
-      // Execution of the script / expression based on the row data
-      // mapped into context.
       try {
-        ELResult result = el.execute(ctx);
-        if (result.getBoolean()) {
-          if (metric != null && context != null) {
-            context.getMetrics().count(metric, 1);
-          }
-          if (message == null) {
-            message = condition;
-          }
-          if (context != null) {
-            context.getTransientStore().increment(TransientVariableScope.LOCAL, "dq_failure", 1);
-          }
-          throw new ReportErrorAndProceed(message, 1);
-        } else if (context != null && !context.getTransientStore().getVariables().contains("dq_failure")) {
-            context.getTransientStore().set(TransientVariableScope.LOCAL, "dq_failure", 0L);
+        if (context != null && context.getTransientStore() != null) {
+          // Initialize dq_failure counter for each row
+          context.getTransientStore().set(TransientVariableScope.GLOBAL, "dq_failure", 0L);
         }
-      } catch (ELException e) {
+        execute(row, context);
+      } catch (ErrorRowException e) {
+        // Let the RecipePipelineExecutor handle the error
+        if (context != null && context.getTransientStore() != null) {
+          context.getTransientStore().increment(TransientVariableScope.GLOBAL, "dq_failure", 1L);
+        }
+        throw e;
+      } catch (Exception e) {
         throw new DirectiveExecutionException(NAME, e.getMessage(), e);
       }
-      results.add(row);
     }
-    return results;
+    return rows;
   }
 
-  @Override
-  public Mutation lineage() {
-    Mutation.Builder builder = Mutation.builder()
-      .readable("Redirect records to error path based on expression'%s'", condition);
-    el.variables().forEach(column -> builder.relation(column, column));
-    return builder.build();
-  }
-
-  @Override
-  public List<EntityCountMetric> getCountMetrics() {
-    EntityCountMetric jexlCategoryMetric = getJexlCategoryMetric(el.getScriptParsedText());
-    return (jexlCategoryMetric == null) ? null : ImmutableList.of(jexlCategoryMetric);
+  private Row execute(Row row, ExecutorContext context) throws ErrorRowException {
+    try {
+      ELContext elContext = new ELContext(context, conditionExpr, row);
+      ELResult result = conditionExpr.execute(elContext);
+      if (result.getBoolean()) {
+        elContext = new ELContext(context, messageExpr, row);
+        String errorMessage = String.valueOf(messageExpr.execute(elContext).getObject());
+        throw new ErrorRowException(NAME, errorMessage, 1);
+      }
+    } catch (ELException e) {
+      throw new ErrorRowException(NAME, e.getMessage(), 1);
+    }
+    return row;
   }
 }
+
+
+

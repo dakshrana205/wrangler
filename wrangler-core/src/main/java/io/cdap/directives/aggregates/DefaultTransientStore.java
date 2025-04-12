@@ -94,10 +94,10 @@ public class DefaultTransientStore implements TransientStore {
    */
   @Override
   public <T> T get(String name) {
-    if (global.containsKey(name)) {
-      return (T) global.get(name);
+    if (local.containsKey(name)) {
+      return (T) local.get(name);
     }
-    return (T) local.get(name);
+    return (T) global.get(name);
   }
 
   /**

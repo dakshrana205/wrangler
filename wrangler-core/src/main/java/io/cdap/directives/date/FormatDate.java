@@ -23,6 +23,7 @@ import io.cdap.wrangler.api.Arguments;
 import io.cdap.wrangler.api.Directive;
 import io.cdap.wrangler.api.DirectiveExecutionException;
 import io.cdap.wrangler.api.DirectiveParseException;
+import io.cdap.wrangler.api.ErrorRowException;
 import io.cdap.wrangler.api.ExecutorContext;
 import io.cdap.wrangler.api.Row;
 import io.cdap.wrangler.api.annotations.Categories;
@@ -75,36 +76,29 @@ public class FormatDate implements Directive, Lineage {
   }
 
   @Override
-  public List<Row> execute(List<Row> rows, ExecutorContext context) throws DirectiveExecutionException {
-    List<Row> results = new ArrayList<>();
+  public List<Row> execute(List<Row> rows, ExecutorContext context)
+    throws DirectiveExecutionException, ErrorRowException {
     for (Row row : rows) {
-      Row dt = new Row(row);
-      int idx = dt.find(column);
-
-      if (idx == -1) {
-        throw new DirectiveExecutionException(NAME, String.format("Column '%s' does not exist.", column));
-      }
-
-      Object object = row.getValue(idx);
-
-      if (object != null) {
-        ZonedDateTime zonedDateTime;
-        if (object instanceof LocalDate) {
-          zonedDateTime = ((LocalDate) object).atStartOfDay(ZoneId.ofOffset("UTC", ZoneOffset.UTC));
-        } else if (object instanceof ZonedDateTime) {
-          zonedDateTime = (ZonedDateTime) object;
-        } else {
-          throw new DirectiveExecutionException(
-            NAME, String.format("Column '%s' has invalid type '%s'. Apply 'parse-as-date' directive first.",
-                                column, object.getClass().getSimpleName()));
+      int idx = row.find(column);
+      if (idx != -1) {
+        Object object = row.getValue(idx);
+        if (object == null) {
+          continue;
         }
-
-        dt.setValue(idx, destinationFmt.format(zonedDateTime));
+        if (object instanceof ZonedDateTime) {
+          ZonedDateTime zonedDateTime = (ZonedDateTime) object;
+          // Ensure we're working with UTC timezone
+          ZonedDateTime utcDateTime = zonedDateTime.withZoneSameInstant(ZoneId.of("UTC"));
+          String formatted = utcDateTime.format(destinationFmt);
+          row.setValue(idx, formatted);
+        } else {
+          throw new ErrorRowException(
+            NAME, String.format("Column '%s' is of invalid type '%s'. It should be of type 'ZonedDateTime'.",
+                                column, object.getClass().getSimpleName()), 2);
+        }
       }
-
-      results.add(dt);
     }
-    return results;
+    return rows;
   }
 
   @Override

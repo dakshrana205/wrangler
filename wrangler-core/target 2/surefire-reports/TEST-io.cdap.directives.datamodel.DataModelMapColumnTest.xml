@@ -1,0 +1,327 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="io.cdap.directives.datamodel.DataModelMapColumnTest" time="0.44" tests="6" errors="6" skipped="0" failures="0">
+  <properties>
+    <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
+    <property name="java.vm.version" value="22.0.2+9-70"/>
+    <property name="sun.boot.library.path" value="/Library/Java/JavaVirtualMachines/jdk-22.jdk/Contents/Home/lib"/>
+    <property name="maven.multiModuleProjectDirectory" value="/Users/dakshrana/Desktop/wrangler/wrangler-core"/>
+    <property name="java.vm.vendor" value="Oracle Corporation"/>
+    <property name="java.vendor.url" value="https://java.oracle.com/"/>
+    <property name="guice.disable.misplaced.annotation.check" value="true"/>
+    <property name="path.separator" value=":"/>
+    <property name="java.vm.name" value="Java HotSpot(TM) 64-Bit Server VM"/>
+    <property name="user.country" value="IN"/>
+    <property name="sun.java.launcher" value="SUN_STANDARD"/>
+    <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
+    <property name="user.dir" value="/Users/dakshrana/Desktop/wrangler/wrangler-core"/>
+    <property name="java.vm.compressedOopsMode" value="Zero based"/>
+    <property name="java.runtime.version" value="22.0.2+9-70"/>
+    <property name="os.arch" value="aarch64"/>
+    <property name="java.io.tmpdir" value="/var/folders/wj/r2zgbx9n0b18qngsc088yl7m0000gn/T/"/>
+    <property name="line.separator" value="&#10;"/>
+    <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
+    <property name="stderr.encoding" value="UTF-8"/>
+    <property name="os.name" value="Mac OS X"/>
+    <property name="classworlds.conf" value="/opt/homebrew/Cellar/maven/3.9.9/libexec/bin/m2.conf"/>
+    <property name="sun.jnu.encoding" value="UTF-8"/>
+    <property name="stdout.encoding" value="UTF-8"/>
+    <property name="java.library.path" value="/Users/dakshrana/Library/Java/Extensions:/Library/Java/Extensions:/Network/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java:."/>
+    <property name="maven.conf" value="/opt/homebrew/Cellar/maven/3.9.9/libexec/conf"/>
+    <property name="jdk.debug" value="release"/>
+    <property name="java.class.version" value="66.0"/>
+    <property name="java.specification.name" value="Java Platform API Specification"/>
+    <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
+    <property name="os.version" value="15.4"/>
+    <property name="library.jansi.path" value="/opt/homebrew/Cellar/maven/3.9.9/libexec/lib/jansi-native"/>
+    <property name="http.nonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
+    <property name="user.home" value="/Users/dakshrana"/>
+    <property name="user.timezone" value="Asia/Kolkata"/>
+    <property name="file.encoding" value="UTF-8"/>
+    <property name="java.specification.version" value="22"/>
+    <property name="user.name" value="dakshrana"/>
+    <property name="java.class.path" value="/opt/homebrew/Cellar/maven/3.9.9/libexec/boot/plexus-classworlds-2.8.0.jar"/>
+    <property name="java.vm.specification.version" value="22"/>
+    <property name="sun.arch.data.model" value="64"/>
+    <property name="sun.java.command" value="org.codehaus.plexus.classworlds.launcher.Launcher test"/>
+    <property name="java.home" value="/Library/Java/JavaVirtualMachines/jdk-22.jdk/Contents/Home"/>
+    <property name="apple.awt.application.name" value="Launcher"/>
+    <property name="user.language" value="en"/>
+    <property name="java.specification.vendor" value="Oracle Corporation"/>
+    <property name="java.vm.info" value="mixed mode, sharing"/>
+    <property name="java.version" value="22.0.2"/>
+    <property name="native.encoding" value="UTF-8"/>
+    <property name="java.vendor" value="Oracle Corporation"/>
+    <property name="maven.home" value="/opt/homebrew/Cellar/maven/3.9.9/libexec"/>
+    <property name="file.separator" value="/"/>
+    <property name="java.version.date" value="2024-07-16"/>
+    <property name="java.vendor.url.bug" value="https://bugreport.java.com/bugreport/"/>
+    <property name="sun.io.unicode.encoding" value="UnicodeBig"/>
+    <property name="sun.cpu.endian" value="little"/>
+    <property name="socksNonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
+    <property name="ftp.nonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
+  </properties>
+  <testcase name="testInitialize_unknownDataModel_directiveException" classname="io.cdap.directives.datamodel.DataModelMapColumnTest" time="0.435">
+    <error message="Unexpected exception, expected&lt;io.cdap.wrangler.api.RecipeException&gt; but was&lt;org.objenesis.ObjenesisException&gt;" type="java.lang.Exception"><![CDATA[java.lang.Exception: Unexpected exception, expected<io.cdap.wrangler.api.RecipeException> but was<org.objenesis.ObjenesisException>
+	at javax.xml.parsers.FactoryFinder.<clinit>(FactoryFinder.java:56)
+	at javax.xml.parsers.SAXParserFactory.newInstance(SAXParserFactory.java:181)
+	at ch.qos.logback.core.joran.event.SaxEventRecorder.buildSaxParser(SaxEventRecorder.java:79)
+	at ch.qos.logback.core.joran.event.SaxEventRecorder.recordEvents(SaxEventRecorder.java:57)
+	at ch.qos.logback.core.joran.GenericConfigurator.doConfigure(GenericConfigurator.java:151)
+	at ch.qos.logback.core.joran.GenericConfigurator.doConfigure(GenericConfigurator.java:110)
+	at ch.qos.logback.core.joran.GenericConfigurator.doConfigure(GenericConfigurator.java:53)
+	at ch.qos.logback.classic.util.ContextInitializer.configureByResource(ContextInitializer.java:64)
+	at ch.qos.logback.classic.util.ContextInitializer.autoConfig(ContextInitializer.java:134)
+	at org.slf4j.impl.StaticLoggerBinder.init(StaticLoggerBinder.java:84)
+	at org.slf4j.impl.StaticLoggerBinder.<clinit>(StaticLoggerBinder.java:55)
+	at org.slf4j.LoggerFactory.bind(LoggerFactory.java:143)
+	at org.slf4j.LoggerFactory.performInitialization(LoggerFactory.java:122)
+	at org.slf4j.LoggerFactory.getILoggerFactory(LoggerFactory.java:378)
+	at org.slf4j.LoggerFactory.getLogger(LoggerFactory.java:328)
+	at org.slf4j.LoggerFactory.getLogger(LoggerFactory.java:349)
+	at io.cdap.wrangler.utils.AvroSchemaGlossary.<clinit>(AvroSchemaGlossary.java:34)
+	at java.base/jdk.internal.misc.Unsafe.ensureClassInitialized0(Native Method)
+	at java.base/jdk.internal.misc.Unsafe.ensureClassInitialized(Unsafe.java:1160)
+	at java.base/jdk.internal.reflect.MethodHandleAccessorFactory.ensureClassInitialized(MethodHandleAccessorFactory.java:340)
+	at java.base/jdk.internal.reflect.MethodHandleAccessorFactory.newSerializableConstructorAccessor(MethodHandleAccessorFactory.java:128)
+	at java.base/jdk.internal.reflect.ReflectionFactory.generateConstructor(ReflectionFactory.java:389)
+	at java.base/jdk.internal.reflect.ReflectionFactory.newConstructorForSerialization(ReflectionFactory.java:288)
+	at jdk.unsupported/sun.reflect.ReflectionFactory.newConstructorForSerialization(ReflectionFactory.java:100)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.objenesis.instantiator.sun.SunReflectionFactoryHelper.newConstructorForSerialization(SunReflectionFactoryHelper.java:44)
+	at org.objenesis.instantiator.sun.SunReflectionFactoryInstantiator.<init>(SunReflectionFactoryInstantiator.java:41)
+	at org.objenesis.strategy.StdInstantiatorStrategy.newInstantiatorOf(StdInstantiatorStrategy.java:67)
+	at org.objenesis.ObjenesisBase.getInstantiatorOf(ObjenesisBase.java:94)
+	at org.objenesis.ObjenesisBase.newInstance(ObjenesisBase.java:73)
+	at org.mockito.internal.creation.instance.ObjenesisInstantiator.newInstance(ObjenesisInstantiator.java:19)
+	at org.mockito.internal.creation.bytebuddy.SubclassByteBuddyMockMaker.createMock(SubclassByteBuddyMockMaker.java:47)
+	at org.mockito.internal.creation.bytebuddy.ByteBuddyMockMaker.createMock(ByteBuddyMockMaker.java:25)
+	at org.powermock.api.mockito.mockmaker.PowerMockMaker.createMock(PowerMockMaker.java:41)
+	at org.mockito.internal.util.MockUtil.createMock(MockUtil.java:35)
+	at org.mockito.internal.MockitoCore.mock(MockitoCore.java:69)
+	at org.mockito.Mockito.mock(Mockito.java:1895)
+	at org.mockito.Mockito.mock(Mockito.java:1804)
+	at io.cdap.directives.datamodel.DataModelMapColumnTest.testInitialize_unknownDataModel_directiveException(DataModelMapColumnTest.java:72)
+]]></error>
+  </testcase>
+  <testcase name="testInitialize_unknownRevision_directiveException" classname="io.cdap.directives.datamodel.DataModelMapColumnTest" time="0">
+    <error message="Unexpected exception, expected&lt;io.cdap.wrangler.api.RecipeException&gt; but was&lt;org.objenesis.ObjenesisException&gt;" type="java.lang.Exception"><![CDATA[java.lang.Exception: Unexpected exception, expected<io.cdap.wrangler.api.RecipeException> but was<org.objenesis.ObjenesisException>
+	at javax.xml.parsers.FactoryFinder.<clinit>(FactoryFinder.java:56)
+	at javax.xml.parsers.SAXParserFactory.newInstance(SAXParserFactory.java:181)
+	at ch.qos.logback.core.joran.event.SaxEventRecorder.buildSaxParser(SaxEventRecorder.java:79)
+	at ch.qos.logback.core.joran.event.SaxEventRecorder.recordEvents(SaxEventRecorder.java:57)
+	at ch.qos.logback.core.joran.GenericConfigurator.doConfigure(GenericConfigurator.java:151)
+	at ch.qos.logback.core.joran.GenericConfigurator.doConfigure(GenericConfigurator.java:110)
+	at ch.qos.logback.core.joran.GenericConfigurator.doConfigure(GenericConfigurator.java:53)
+	at ch.qos.logback.classic.util.ContextInitializer.configureByResource(ContextInitializer.java:64)
+	at ch.qos.logback.classic.util.ContextInitializer.autoConfig(ContextInitializer.java:134)
+	at org.slf4j.impl.StaticLoggerBinder.init(StaticLoggerBinder.java:84)
+	at org.slf4j.impl.StaticLoggerBinder.<clinit>(StaticLoggerBinder.java:55)
+	at org.slf4j.LoggerFactory.bind(LoggerFactory.java:143)
+	at org.slf4j.LoggerFactory.performInitialization(LoggerFactory.java:122)
+	at org.slf4j.LoggerFactory.getILoggerFactory(LoggerFactory.java:378)
+	at org.slf4j.LoggerFactory.getLogger(LoggerFactory.java:328)
+	at org.slf4j.LoggerFactory.getLogger(LoggerFactory.java:349)
+	at io.cdap.wrangler.utils.AvroSchemaGlossary.<clinit>(AvroSchemaGlossary.java:34)
+	at java.base/jdk.internal.misc.Unsafe.ensureClassInitialized0(Native Method)
+	at java.base/jdk.internal.misc.Unsafe.ensureClassInitialized(Unsafe.java:1160)
+	at java.base/jdk.internal.reflect.MethodHandleAccessorFactory.ensureClassInitialized(MethodHandleAccessorFactory.java:340)
+	at java.base/jdk.internal.reflect.MethodHandleAccessorFactory.newSerializableConstructorAccessor(MethodHandleAccessorFactory.java:128)
+	at java.base/jdk.internal.reflect.ReflectionFactory.generateConstructor(ReflectionFactory.java:389)
+	at java.base/jdk.internal.reflect.ReflectionFactory.newConstructorForSerialization(ReflectionFactory.java:288)
+	at jdk.unsupported/sun.reflect.ReflectionFactory.newConstructorForSerialization(ReflectionFactory.java:100)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.objenesis.instantiator.sun.SunReflectionFactoryHelper.newConstructorForSerialization(SunReflectionFactoryHelper.java:44)
+	at org.objenesis.instantiator.sun.SunReflectionFactoryInstantiator.<init>(SunReflectionFactoryInstantiator.java:41)
+	at org.objenesis.strategy.StdInstantiatorStrategy.newInstantiatorOf(StdInstantiatorStrategy.java:67)
+	at org.objenesis.ObjenesisBase.getInstantiatorOf(ObjenesisBase.java:94)
+	at org.objenesis.ObjenesisBase.newInstance(ObjenesisBase.java:73)
+	at org.mockito.internal.creation.instance.ObjenesisInstantiator.newInstance(ObjenesisInstantiator.java:19)
+	at org.mockito.internal.creation.bytebuddy.SubclassByteBuddyMockMaker.createMock(SubclassByteBuddyMockMaker.java:47)
+	at org.mockito.internal.creation.bytebuddy.ByteBuddyMockMaker.createMock(ByteBuddyMockMaker.java:25)
+	at org.powermock.api.mockito.mockmaker.PowerMockMaker.createMock(PowerMockMaker.java:41)
+	at org.mockito.internal.util.MockUtil.createMock(MockUtil.java:35)
+	at org.mockito.internal.MockitoCore.mock(MockitoCore.java:69)
+	at org.mockito.Mockito.mock(Mockito.java:1895)
+	at org.mockito.Mockito.mock(Mockito.java:1804)
+	at io.cdap.directives.datamodel.DataModelMapColumnTest.testInitialize_unknownDataModel_directiveException(DataModelMapColumnTest.java:72)
+]]></error>
+  </testcase>
+  <testcase name="testInitialize_unknownModel_directiveException" classname="io.cdap.directives.datamodel.DataModelMapColumnTest" time="0.004">
+    <error message="Unexpected exception, expected&lt;io.cdap.wrangler.api.RecipeException&gt; but was&lt;org.objenesis.ObjenesisException&gt;" type="java.lang.Exception"><![CDATA[java.lang.Exception: Unexpected exception, expected<io.cdap.wrangler.api.RecipeException> but was<org.objenesis.ObjenesisException>
+	at javax.xml.parsers.FactoryFinder.<clinit>(FactoryFinder.java:56)
+	at javax.xml.parsers.SAXParserFactory.newInstance(SAXParserFactory.java:181)
+	at ch.qos.logback.core.joran.event.SaxEventRecorder.buildSaxParser(SaxEventRecorder.java:79)
+	at ch.qos.logback.core.joran.event.SaxEventRecorder.recordEvents(SaxEventRecorder.java:57)
+	at ch.qos.logback.core.joran.GenericConfigurator.doConfigure(GenericConfigurator.java:151)
+	at ch.qos.logback.core.joran.GenericConfigurator.doConfigure(GenericConfigurator.java:110)
+	at ch.qos.logback.core.joran.GenericConfigurator.doConfigure(GenericConfigurator.java:53)
+	at ch.qos.logback.classic.util.ContextInitializer.configureByResource(ContextInitializer.java:64)
+	at ch.qos.logback.classic.util.ContextInitializer.autoConfig(ContextInitializer.java:134)
+	at org.slf4j.impl.StaticLoggerBinder.init(StaticLoggerBinder.java:84)
+	at org.slf4j.impl.StaticLoggerBinder.<clinit>(StaticLoggerBinder.java:55)
+	at org.slf4j.LoggerFactory.bind(LoggerFactory.java:143)
+	at org.slf4j.LoggerFactory.performInitialization(LoggerFactory.java:122)
+	at org.slf4j.LoggerFactory.getILoggerFactory(LoggerFactory.java:378)
+	at org.slf4j.LoggerFactory.getLogger(LoggerFactory.java:328)
+	at org.slf4j.LoggerFactory.getLogger(LoggerFactory.java:349)
+	at io.cdap.wrangler.utils.AvroSchemaGlossary.<clinit>(AvroSchemaGlossary.java:34)
+	at java.base/jdk.internal.misc.Unsafe.ensureClassInitialized0(Native Method)
+	at java.base/jdk.internal.misc.Unsafe.ensureClassInitialized(Unsafe.java:1160)
+	at java.base/jdk.internal.reflect.MethodHandleAccessorFactory.ensureClassInitialized(MethodHandleAccessorFactory.java:340)
+	at java.base/jdk.internal.reflect.MethodHandleAccessorFactory.newSerializableConstructorAccessor(MethodHandleAccessorFactory.java:128)
+	at java.base/jdk.internal.reflect.ReflectionFactory.generateConstructor(ReflectionFactory.java:389)
+	at java.base/jdk.internal.reflect.ReflectionFactory.newConstructorForSerialization(ReflectionFactory.java:288)
+	at jdk.unsupported/sun.reflect.ReflectionFactory.newConstructorForSerialization(ReflectionFactory.java:100)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.objenesis.instantiator.sun.SunReflectionFactoryHelper.newConstructorForSerialization(SunReflectionFactoryHelper.java:44)
+	at org.objenesis.instantiator.sun.SunReflectionFactoryInstantiator.<init>(SunReflectionFactoryInstantiator.java:41)
+	at org.objenesis.strategy.StdInstantiatorStrategy.newInstantiatorOf(StdInstantiatorStrategy.java:67)
+	at org.objenesis.ObjenesisBase.getInstantiatorOf(ObjenesisBase.java:94)
+	at org.objenesis.ObjenesisBase.newInstance(ObjenesisBase.java:73)
+	at org.mockito.internal.creation.instance.ObjenesisInstantiator.newInstance(ObjenesisInstantiator.java:19)
+	at org.mockito.internal.creation.bytebuddy.SubclassByteBuddyMockMaker.createMock(SubclassByteBuddyMockMaker.java:47)
+	at org.mockito.internal.creation.bytebuddy.ByteBuddyMockMaker.createMock(ByteBuddyMockMaker.java:25)
+	at org.powermock.api.mockito.mockmaker.PowerMockMaker.createMock(PowerMockMaker.java:41)
+	at org.mockito.internal.util.MockUtil.createMock(MockUtil.java:35)
+	at org.mockito.internal.MockitoCore.mock(MockitoCore.java:69)
+	at org.mockito.Mockito.mock(Mockito.java:1895)
+	at org.mockito.Mockito.mock(Mockito.java:1804)
+	at io.cdap.directives.datamodel.DataModelMapColumnTest.testInitialize_unknownDataModel_directiveException(DataModelMapColumnTest.java:72)
+]]></error>
+  </testcase>
+  <testcase name="testInitialize_unknownTargetField_directiveException" classname="io.cdap.directives.datamodel.DataModelMapColumnTest" time="0">
+    <error message="Unexpected exception, expected&lt;io.cdap.wrangler.api.RecipeException&gt; but was&lt;org.objenesis.ObjenesisException&gt;" type="java.lang.Exception"><![CDATA[java.lang.Exception: Unexpected exception, expected<io.cdap.wrangler.api.RecipeException> but was<org.objenesis.ObjenesisException>
+	at javax.xml.parsers.FactoryFinder.<clinit>(FactoryFinder.java:56)
+	at javax.xml.parsers.SAXParserFactory.newInstance(SAXParserFactory.java:181)
+	at ch.qos.logback.core.joran.event.SaxEventRecorder.buildSaxParser(SaxEventRecorder.java:79)
+	at ch.qos.logback.core.joran.event.SaxEventRecorder.recordEvents(SaxEventRecorder.java:57)
+	at ch.qos.logback.core.joran.GenericConfigurator.doConfigure(GenericConfigurator.java:151)
+	at ch.qos.logback.core.joran.GenericConfigurator.doConfigure(GenericConfigurator.java:110)
+	at ch.qos.logback.core.joran.GenericConfigurator.doConfigure(GenericConfigurator.java:53)
+	at ch.qos.logback.classic.util.ContextInitializer.configureByResource(ContextInitializer.java:64)
+	at ch.qos.logback.classic.util.ContextInitializer.autoConfig(ContextInitializer.java:134)
+	at org.slf4j.impl.StaticLoggerBinder.init(StaticLoggerBinder.java:84)
+	at org.slf4j.impl.StaticLoggerBinder.<clinit>(StaticLoggerBinder.java:55)
+	at org.slf4j.LoggerFactory.bind(LoggerFactory.java:143)
+	at org.slf4j.LoggerFactory.performInitialization(LoggerFactory.java:122)
+	at org.slf4j.LoggerFactory.getILoggerFactory(LoggerFactory.java:378)
+	at org.slf4j.LoggerFactory.getLogger(LoggerFactory.java:328)
+	at org.slf4j.LoggerFactory.getLogger(LoggerFactory.java:349)
+	at io.cdap.wrangler.utils.AvroSchemaGlossary.<clinit>(AvroSchemaGlossary.java:34)
+	at java.base/jdk.internal.misc.Unsafe.ensureClassInitialized0(Native Method)
+	at java.base/jdk.internal.misc.Unsafe.ensureClassInitialized(Unsafe.java:1160)
+	at java.base/jdk.internal.reflect.MethodHandleAccessorFactory.ensureClassInitialized(MethodHandleAccessorFactory.java:340)
+	at java.base/jdk.internal.reflect.MethodHandleAccessorFactory.newSerializableConstructorAccessor(MethodHandleAccessorFactory.java:128)
+	at java.base/jdk.internal.reflect.ReflectionFactory.generateConstructor(ReflectionFactory.java:389)
+	at java.base/jdk.internal.reflect.ReflectionFactory.newConstructorForSerialization(ReflectionFactory.java:288)
+	at jdk.unsupported/sun.reflect.ReflectionFactory.newConstructorForSerialization(ReflectionFactory.java:100)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.objenesis.instantiator.sun.SunReflectionFactoryHelper.newConstructorForSerialization(SunReflectionFactoryHelper.java:44)
+	at org.objenesis.instantiator.sun.SunReflectionFactoryInstantiator.<init>(SunReflectionFactoryInstantiator.java:41)
+	at org.objenesis.strategy.StdInstantiatorStrategy.newInstantiatorOf(StdInstantiatorStrategy.java:67)
+	at org.objenesis.ObjenesisBase.getInstantiatorOf(ObjenesisBase.java:94)
+	at org.objenesis.ObjenesisBase.newInstance(ObjenesisBase.java:73)
+	at org.mockito.internal.creation.instance.ObjenesisInstantiator.newInstance(ObjenesisInstantiator.java:19)
+	at org.mockito.internal.creation.bytebuddy.SubclassByteBuddyMockMaker.createMock(SubclassByteBuddyMockMaker.java:47)
+	at org.mockito.internal.creation.bytebuddy.ByteBuddyMockMaker.createMock(ByteBuddyMockMaker.java:25)
+	at org.powermock.api.mockito.mockmaker.PowerMockMaker.createMock(PowerMockMaker.java:41)
+	at org.mockito.internal.util.MockUtil.createMock(MockUtil.java:35)
+	at org.mockito.internal.MockitoCore.mock(MockitoCore.java:69)
+	at org.mockito.Mockito.mock(Mockito.java:1895)
+	at org.mockito.Mockito.mock(Mockito.java:1804)
+	at io.cdap.directives.datamodel.DataModelMapColumnTest.testInitialize_unknownDataModel_directiveException(DataModelMapColumnTest.java:72)
+]]></error>
+  </testcase>
+  <testcase name="testInitialize_targetFieldMissingType_directiveException" classname="io.cdap.directives.datamodel.DataModelMapColumnTest" time="0.001">
+    <error message="Unexpected exception, expected&lt;io.cdap.wrangler.api.RecipeException&gt; but was&lt;org.objenesis.ObjenesisException&gt;" type="java.lang.Exception"><![CDATA[java.lang.Exception: Unexpected exception, expected<io.cdap.wrangler.api.RecipeException> but was<org.objenesis.ObjenesisException>
+	at javax.xml.parsers.FactoryFinder.<clinit>(FactoryFinder.java:56)
+	at javax.xml.parsers.SAXParserFactory.newInstance(SAXParserFactory.java:181)
+	at ch.qos.logback.core.joran.event.SaxEventRecorder.buildSaxParser(SaxEventRecorder.java:79)
+	at ch.qos.logback.core.joran.event.SaxEventRecorder.recordEvents(SaxEventRecorder.java:57)
+	at ch.qos.logback.core.joran.GenericConfigurator.doConfigure(GenericConfigurator.java:151)
+	at ch.qos.logback.core.joran.GenericConfigurator.doConfigure(GenericConfigurator.java:110)
+	at ch.qos.logback.core.joran.GenericConfigurator.doConfigure(GenericConfigurator.java:53)
+	at ch.qos.logback.classic.util.ContextInitializer.configureByResource(ContextInitializer.java:64)
+	at ch.qos.logback.classic.util.ContextInitializer.autoConfig(ContextInitializer.java:134)
+	at org.slf4j.impl.StaticLoggerBinder.init(StaticLoggerBinder.java:84)
+	at org.slf4j.impl.StaticLoggerBinder.<clinit>(StaticLoggerBinder.java:55)
+	at org.slf4j.LoggerFactory.bind(LoggerFactory.java:143)
+	at org.slf4j.LoggerFactory.performInitialization(LoggerFactory.java:122)
+	at org.slf4j.LoggerFactory.getILoggerFactory(LoggerFactory.java:378)
+	at org.slf4j.LoggerFactory.getLogger(LoggerFactory.java:328)
+	at org.slf4j.LoggerFactory.getLogger(LoggerFactory.java:349)
+	at io.cdap.wrangler.utils.AvroSchemaGlossary.<clinit>(AvroSchemaGlossary.java:34)
+	at java.base/jdk.internal.misc.Unsafe.ensureClassInitialized0(Native Method)
+	at java.base/jdk.internal.misc.Unsafe.ensureClassInitialized(Unsafe.java:1160)
+	at java.base/jdk.internal.reflect.MethodHandleAccessorFactory.ensureClassInitialized(MethodHandleAccessorFactory.java:340)
+	at java.base/jdk.internal.reflect.MethodHandleAccessorFactory.newSerializableConstructorAccessor(MethodHandleAccessorFactory.java:128)
+	at java.base/jdk.internal.reflect.ReflectionFactory.generateConstructor(ReflectionFactory.java:389)
+	at java.base/jdk.internal.reflect.ReflectionFactory.newConstructorForSerialization(ReflectionFactory.java:288)
+	at jdk.unsupported/sun.reflect.ReflectionFactory.newConstructorForSerialization(ReflectionFactory.java:100)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.objenesis.instantiator.sun.SunReflectionFactoryHelper.newConstructorForSerialization(SunReflectionFactoryHelper.java:44)
+	at org.objenesis.instantiator.sun.SunReflectionFactoryInstantiator.<init>(SunReflectionFactoryInstantiator.java:41)
+	at org.objenesis.strategy.StdInstantiatorStrategy.newInstantiatorOf(StdInstantiatorStrategy.java:67)
+	at org.objenesis.ObjenesisBase.getInstantiatorOf(ObjenesisBase.java:94)
+	at org.objenesis.ObjenesisBase.newInstance(ObjenesisBase.java:73)
+	at org.mockito.internal.creation.instance.ObjenesisInstantiator.newInstance(ObjenesisInstantiator.java:19)
+	at org.mockito.internal.creation.bytebuddy.SubclassByteBuddyMockMaker.createMock(SubclassByteBuddyMockMaker.java:47)
+	at org.mockito.internal.creation.bytebuddy.ByteBuddyMockMaker.createMock(ByteBuddyMockMaker.java:25)
+	at org.powermock.api.mockito.mockmaker.PowerMockMaker.createMock(PowerMockMaker.java:41)
+	at org.mockito.internal.util.MockUtil.createMock(MockUtil.java:35)
+	at org.mockito.internal.MockitoCore.mock(MockitoCore.java:69)
+	at org.mockito.Mockito.mock(Mockito.java:1895)
+	at org.mockito.Mockito.mock(Mockito.java:1804)
+	at io.cdap.directives.datamodel.DataModelMapColumnTest.testInitialize_unknownDataModel_directiveException(DataModelMapColumnTest.java:72)
+]]></error>
+  </testcase>
+  <testcase name="testExecute_row_successful" classname="io.cdap.directives.datamodel.DataModelMapColumnTest" time="0">
+    <error message="java.lang.reflect.InvocationTargetException" type="org.objenesis.ObjenesisException"><![CDATA[org.objenesis.ObjenesisException: java.lang.reflect.InvocationTargetException
+	at javax.xml.parsers.FactoryFinder.<clinit>(FactoryFinder.java:56)
+	at javax.xml.parsers.SAXParserFactory.newInstance(SAXParserFactory.java:181)
+	at ch.qos.logback.core.joran.event.SaxEventRecorder.buildSaxParser(SaxEventRecorder.java:79)
+	at ch.qos.logback.core.joran.event.SaxEventRecorder.recordEvents(SaxEventRecorder.java:57)
+	at ch.qos.logback.core.joran.GenericConfigurator.doConfigure(GenericConfigurator.java:151)
+	at ch.qos.logback.core.joran.GenericConfigurator.doConfigure(GenericConfigurator.java:110)
+	at ch.qos.logback.core.joran.GenericConfigurator.doConfigure(GenericConfigurator.java:53)
+	at ch.qos.logback.classic.util.ContextInitializer.configureByResource(ContextInitializer.java:64)
+	at ch.qos.logback.classic.util.ContextInitializer.autoConfig(ContextInitializer.java:134)
+	at org.slf4j.impl.StaticLoggerBinder.init(StaticLoggerBinder.java:84)
+	at org.slf4j.impl.StaticLoggerBinder.<clinit>(StaticLoggerBinder.java:55)
+	at org.slf4j.LoggerFactory.bind(LoggerFactory.java:143)
+	at org.slf4j.LoggerFactory.performInitialization(LoggerFactory.java:122)
+	at org.slf4j.LoggerFactory.getILoggerFactory(LoggerFactory.java:378)
+	at org.slf4j.LoggerFactory.getLogger(LoggerFactory.java:328)
+	at org.slf4j.LoggerFactory.getLogger(LoggerFactory.java:349)
+	at io.cdap.wrangler.utils.AvroSchemaGlossary.<clinit>(AvroSchemaGlossary.java:34)
+	at java.base/jdk.internal.misc.Unsafe.ensureClassInitialized0(Native Method)
+	at java.base/jdk.internal.misc.Unsafe.ensureClassInitialized(Unsafe.java:1160)
+	at java.base/jdk.internal.reflect.MethodHandleAccessorFactory.ensureClassInitialized(MethodHandleAccessorFactory.java:340)
+	at java.base/jdk.internal.reflect.MethodHandleAccessorFactory.newSerializableConstructorAccessor(MethodHandleAccessorFactory.java:128)
+	at java.base/jdk.internal.reflect.ReflectionFactory.generateConstructor(ReflectionFactory.java:389)
+	at java.base/jdk.internal.reflect.ReflectionFactory.newConstructorForSerialization(ReflectionFactory.java:288)
+	at jdk.unsupported/sun.reflect.ReflectionFactory.newConstructorForSerialization(ReflectionFactory.java:100)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.objenesis.instantiator.sun.SunReflectionFactoryHelper.newConstructorForSerialization(SunReflectionFactoryHelper.java:44)
+	at org.objenesis.instantiator.sun.SunReflectionFactoryInstantiator.<init>(SunReflectionFactoryInstantiator.java:41)
+	at org.objenesis.strategy.StdInstantiatorStrategy.newInstantiatorOf(StdInstantiatorStrategy.java:67)
+	at org.objenesis.ObjenesisBase.getInstantiatorOf(ObjenesisBase.java:94)
+	at org.objenesis.ObjenesisBase.newInstance(ObjenesisBase.java:73)
+	at org.mockito.internal.creation.instance.ObjenesisInstantiator.newInstance(ObjenesisInstantiator.java:19)
+	at org.mockito.internal.creation.bytebuddy.SubclassByteBuddyMockMaker.createMock(SubclassByteBuddyMockMaker.java:47)
+	at org.mockito.internal.creation.bytebuddy.ByteBuddyMockMaker.createMock(ByteBuddyMockMaker.java:25)
+	at org.powermock.api.mockito.mockmaker.PowerMockMaker.createMock(PowerMockMaker.java:41)
+	at org.mockito.internal.util.MockUtil.createMock(MockUtil.java:35)
+	at org.mockito.internal.MockitoCore.mock(MockitoCore.java:69)
+	at org.mockito.Mockito.mock(Mockito.java:1895)
+	at org.mockito.Mockito.mock(Mockito.java:1804)
+	at io.cdap.directives.datamodel.DataModelMapColumnTest.testInitialize_unknownDataModel_directiveException(DataModelMapColumnTest.java:72)
+]]></error>
+  </testcase>
+</testsuite>

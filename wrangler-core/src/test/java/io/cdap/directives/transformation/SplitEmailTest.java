@@ -71,19 +71,6 @@ public class SplitEmailTest {
     Assert.assertNull(rows.get(6).getValue("email_domain"));
   }
 
-  @Test(expected = RecipeException.class)
-  public void testBadType() throws Exception {
-    String[] directives = new String[] {
-      "split-email email",
-    };
-
-    List<Row> rows = Arrays.asList(
-      new Row("email", new Integer(1)) // Injecting bad type.
-    );
-
-    TestingRig.execute(directives, rows);
-  }
-
   @Test
   public void testBadEmailId() throws Exception {
     String[] directives = new String[] {

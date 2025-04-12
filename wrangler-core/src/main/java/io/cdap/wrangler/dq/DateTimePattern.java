@@ -45,12 +45,15 @@ public class DateTimePattern {
 
   private static void loadPatterns(String patternFileName, List<Map<Pattern, String>> patternParsers) {
     InputStream stream = DateTimePattern.class.getClassLoader().getResourceAsStream(patternFileName);
+    if (stream == null) {
+      throw new RuntimeException("Failed to load pattern file: " + patternFileName);
+    }
     try {
       List<String> lines = IOUtils.readLines(stream, "UTF-8");
       Map<Pattern, String> currentGroupMap = new LinkedHashMap<>();
       patternParsers.add(currentGroupMap);
       for (String line : lines) {
-        if (!"".equals(line.trim())) { // Not empty
+        if (!"".equals(line.trim()) && !line.trim().startsWith("#")) { // Not empty and not a comment
           if (line.startsWith("--")) { // group separator
             currentGroupMap = new LinkedHashMap<>();
             patternParsers.add(currentGroupMap);
@@ -62,9 +65,14 @@ public class DateTimePattern {
           }
         }
       }
-      stream.close();
     } catch (IOException e) {
-      // Throw exception
+      throw new RuntimeException("Failed to read pattern file: " + patternFileName, e);
+    } finally {
+      try {
+        stream.close();
+      } catch (IOException e) {
+        // Ignore close exception
+      }
     }
   }
 

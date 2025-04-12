@@ -1,0 +1,18 @@
+-------------------------------------------------------------------------------
+Test set: io.cdap.directives.transformation.ParseDateTest
+-------------------------------------------------------------------------------
+Tests run: 5, Failures: 2, Errors: 0, Skipped: 0, Time elapsed: 0.406 sec <<< FAILURE!
+testFormatDate(io.cdap.directives.transformation.ParseDateTest)  Time elapsed: 0.07 sec  <<< FAILURE!
+org.junit.ComparisonFailure: expected:<12-[10-2016 at 14]:45:11 UTC> but was:<12-[09-2016 at 22]:45:11 UTC>
+	at org.junit.Assert.assertEquals(Assert.java:115)
+	at org.junit.Assert.assertEquals(Assert.java:144)
+	at io.cdap.directives.transformation.ParseDateTest.testFormatDate(ParseDateTest.java:257)
+
+testSimpleDateWithPatterns(io.cdap.directives.transformation.ParseDateTest)  Time elapsed: 0.002 sec  <<< FAILURE!
+java.lang.AssertionError: expected:<2016-12-10T14:45:11Z[UTC]> but was:<2016-12-09T22:45:11Z[UTC]>
+	at org.junit.Assert.fail(Assert.java:88)
+	at org.junit.Assert.failNotEquals(Assert.java:834)
+	at org.junit.Assert.assertEquals(Assert.java:118)
+	at org.junit.Assert.assertEquals(Assert.java:144)
+	at io.cdap.directives.transformation.ParseDateTest.testSimpleDateWithPatterns(ParseDateTest.java:138)
+

@@ -40,6 +40,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 import javax.annotation.Nullable;
 
@@ -89,7 +90,8 @@ public final class RecipePipelineExecutor implements RecipePipeline<Row, Structu
   @Override
   public List<StructuredRecord> execute(List<Row> rows, Schema schema) throws RecipeException {
     try {
-      return convertor.toStructureRecord(execute(rows), schema);
+      List<Row> result = execute(rows);
+      return convertor.toStructureRecord(result, schema);
     } catch (RecordConvertorException e) {
       throw new RecipeException("Problem converting into output record. Reason : " + e.getMessage(), e);
     }
@@ -106,7 +108,6 @@ public final class RecipePipelineExecutor implements RecipePipeline<Row, Structu
     List<Directive> directives = getDirectives();
     List<String> messages = new ArrayList<>();
     List<Row> results = new ArrayList<>();
-    int i = 0;
     int directiveIndex = 0;
     // Initialize schema with input schema from TransientStore if running in service env (design-time) / testing env
     boolean schemaManagementEnabled = context != null && context.isSchemaManagementEnabled();
@@ -121,46 +122,86 @@ public final class RecipePipelineExecutor implements RecipePipeline<Row, Structu
     }
 
     try {
+      List<Row> cumulativeRows = rows;
+      directiveIndex = 0;
       collector.reset();
-      while (i < rows.size()) {
-        messages.clear();
-        // Resets the scope of local variable.
-        if (context != null) {
-          context.getTransientStore().reset(TransientVariableScope.LOCAL);
-        }
+      // Resets the scope of local variable.
+      if (context != null) {
+        context.getTransientStore().reset(TransientVariableScope.LOCAL);
+      }
 
-        List<Row> cumulativeRows = rows.subList(i, i + 1);
-        directiveIndex = 0;
-        try {
-          for (Executor<List<Row>, List<Row>> directive : directives) {
-            try {
-              directiveIndex++;
-              cumulativeRows = directive.execute(cumulativeRows, context);
-              if (cumulativeRows.size() < 1) {
-                break;
+      try {
+        for (Executor<List<Row>, List<Row>> directive : directives) {
+          try {
+            directiveIndex++;
+            List<Row> processedRows = new ArrayList<>();
+            // Reset local store for each row to ensure proper isolation
+            if (context != null && context.getTransientStore() != null) {
+              context.getTransientStore().reset(TransientVariableScope.LOCAL);
+            }
+            
+            for (Row row : cumulativeRows) {
+              try {
+                List<Row> result = directive.execute(Collections.singletonList(row), context);
+                if (!result.isEmpty()) {
+                  processedRows.addAll(result);
+                }
+              } catch (ErrorRowException e) {
+                messages.add(String.format("%s", e.getMessage()));
+                collector.add(new ErrorRecord(row, String.join(",", messages), e.getCode(),
+                  e.isShownInWrangler()));
+                messages.clear();
+              } catch (ReportErrorAndProceed e) {
+                // Record the error and continue processing
+                messages.add(e.getMessage());
+                collector.add(new ErrorRecord(row, String.join(",", messages), 1, true));
+                messages.clear();
+                
+                // Continue processing with the row
+                try {
+                  List<Row> result = directive.execute(Collections.singletonList(row), context);
+                  if (!result.isEmpty()) {
+                    processedRows.addAll(result);
+                  }
+                } catch (Exception ex) {
+                  // If we get another exception, just continue without recording it
+                  // since we already recorded the original error
+                  continue;
+                }
+              } catch (DirectiveExecutionException e) {
+                // Record error and stop processing this row
+                messages.add(e.getMessage());
+                collector.add(new ErrorRecord(row, String.join(",", messages), 1, false));
+                messages.clear();
+                continue;
               }
-              if (schemaManagementEnabled && inputSchema != null) {
-                outputSchemaGenerators.get(directiveIndex - 1).addNewOutputFields(cumulativeRows);
-              }
-            } catch (ReportErrorAndProceed e) {
-              messages.add(String.format("%s (ecode: %d)", e.getMessage(), e.getCode()));
-              collector
-                .add(new ErrorRecord(rows.subList(i, i + 1).get(0), String.join(",", messages), e.getCode(), true));
-              cumulativeRows = new ArrayList<>();
+            }
+            cumulativeRows = processedRows;
+            if (cumulativeRows.size() < 1) {
               break;
             }
+            if (schemaManagementEnabled && inputSchema != null) {
+              outputSchemaGenerators.get(directiveIndex - 1).addNewOutputFields(cumulativeRows);
+            }
+          } catch (Exception e) {
+            // Handle any other unexpected exceptions at the directive level
+            messages.add(String.format("%s", e.getMessage()));
+            collector.add(new ErrorRecord(rows.get(0), String.join(",", messages), 1, true));
+            cumulativeRows = new ArrayList<>();
+            break;
           }
-          results.addAll(cumulativeRows);
-        } catch (ErrorRowException e) {
-          messages.add(String.format("%s", e.getMessage()));
-          collector
-            .add(new ErrorRecord(rows.subList(i, i + 1).get(0), String.join(",", messages), e.getCode(),
-              e.isShownInWrangler()));
         }
-        ++i;
+        results.addAll(cumulativeRows);
+      } catch (Exception e) {
+        if (e instanceof RecipeException) {
+          throw (RecipeException) e;
+        }
+        // Handle any other unexpected exceptions
+        messages.add(String.format("%s", e.getMessage()));
+        collector.add(new ErrorRecord(rows.get(0), String.join(",", messages), 1, true));
       }
-    } catch (DirectiveExecutionException e) {
-      throw new RecipeException(e.getMessage(), e, i, directiveIndex);
+    } catch (RecipeException e) {
+      throw e;
     }
     // Schema generation
     if (schemaManagementEnabled && inputSchema != null) {

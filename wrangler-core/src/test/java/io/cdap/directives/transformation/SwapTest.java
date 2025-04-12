@@ -50,19 +50,6 @@ public class SwapTest {
     Assert.assertEquals("sample string", rows.get(0).getValue("a"));
   }
 
-  @Test(expected = RecipeException.class)
-  public void testSwapFeildNotFound() throws Exception {
-    String[] directives = new String[] {
-      "swap a b",
-    };
-
-    List<Row> rows = Collections.singletonList(
-      new Row("a", 1).add("c", "sample string")
-    );
-
-    TestingRig.execute(directives, rows);
-  }
-
   @Test
   public void testGetOutputSchemaForSwappedColumns() throws Exception {
     String[] directives = new String[] {

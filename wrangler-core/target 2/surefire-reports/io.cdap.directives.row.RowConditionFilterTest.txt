@@ -1,0 +1,11 @@
+-------------------------------------------------------------------------------
+Test set: io.cdap.directives.row.RowConditionFilterTest
+-------------------------------------------------------------------------------
+Tests run: 3, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 0.005 sec <<< FAILURE!
+testRHSLHSTypeDisconnect(io.cdap.directives.row.RowConditionFilterTest)  Time elapsed: 0.003 sec  <<< ERROR!
+java.lang.Exception: Unexpected exception, expected<io.cdap.wrangler.api.RecipeException> but was<java.lang.AssertionError>
+	at org.junit.Assert.fail(Assert.java:86)
+	at org.junit.Assert.assertTrue(Assert.java:41)
+	at org.junit.Assert.assertTrue(Assert.java:52)
+	at io.cdap.directives.row.RowConditionFilterTest.testRHSLHSTypeDisconnect(RowConditionFilterTest.java:50)
+

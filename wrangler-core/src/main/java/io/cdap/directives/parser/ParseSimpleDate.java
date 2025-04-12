@@ -34,15 +34,16 @@ import io.cdap.wrangler.api.parser.Text;
 import io.cdap.wrangler.api.parser.TokenType;
 import io.cdap.wrangler.api.parser.UsageDefinition;
 
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.time.LocalTime;
 import java.time.ZoneId;
-import java.time.ZoneOffset;
 import java.time.ZonedDateTime;
-import java.util.Date;
-import java.util.GregorianCalendar;
+import java.time.format.DateTimeFormatter;
+import java.time.format.DateTimeFormatterBuilder;
+import java.time.temporal.ChronoField;
 import java.util.List;
-import java.util.TimeZone;
+import java.util.Locale;
 
 /**
  * A Executor to parse date into {@link ZonedDateTime} object.
@@ -54,7 +55,8 @@ import java.util.TimeZone;
 public class ParseSimpleDate implements Directive, Lineage {
   public static final String NAME = "parse-as-simple-date";
   private String column;
-  private SimpleDateFormat formatter;
+  private DateTimeFormatter formatter;
+  private boolean hasTime;
 
   @Override
   public UsageDefinition define() {
@@ -68,11 +70,23 @@ public class ParseSimpleDate implements Directive, Lineage {
   public void initialize(Arguments args) throws DirectiveParseException {
     this.column = ((ColumnName) args.value("column")).value();
     String format = ((Text) args.value("format")).value();
-    this.formatter = new SimpleDateFormat(format);
-    // CDAP-19615 Use pure Gregorian Calendar to avoid Julian date precision loss
-    GregorianCalendar gc = new GregorianCalendar(TimeZone.getTimeZone("UTC"));
-    gc.setGregorianChange(new Date(Long.MIN_VALUE));
-    formatter.setCalendar(gc);
+    
+    // Check if the format includes time components
+    this.hasTime = format.contains("H") || format.contains("h") || format.contains("K") || format.contains("k");
+    
+    // Create a formatter that handles the pattern
+    DateTimeFormatterBuilder builder = new DateTimeFormatterBuilder()
+      .parseCaseInsensitive()
+      .appendPattern(format);
+    
+    // If the format doesn't include time, default to midnight
+    if (!hasTime) {
+      builder.parseDefaulting(ChronoField.HOUR_OF_DAY, 0)
+        .parseDefaulting(ChronoField.MINUTE_OF_HOUR, 0)
+        .parseDefaulting(ChronoField.SECOND_OF_MINUTE, 0);
+    }
+    
+    this.formatter = builder.toFormatter(Locale.ENGLISH);
   }
 
   @Override
@@ -94,17 +108,38 @@ public class ParseSimpleDate implements Directive, Lineage {
         }
         if (object instanceof String) {
           try {
-            // This implementation first creates Date object and then converts it into ZonedDateTime. This is because
-            // ZonedDateTime requires presence of Zone and Time components in the pattern and object to be parsed.
-            // For example if the pattern is yyyy-mm-dd, ZonedDateTime object can not be created and the call to
-            // ZonedDateTime.parse("2018-12-21", formatter) will throw DateTimeParseException
-            Date date = formatter.parse(object.toString());
-            ZonedDateTime zonedDateTime = ZonedDateTime.from(date.toInstant()
-                                                               .atZone(ZoneId.ofOffset("UTC", ZoneOffset.UTC)));
-            row.setValue(idx, zonedDateTime);
-          } catch (ParseException e) {
+            String dateStr = object.toString();
+            ZonedDateTime zdt;
+            
+            // Handle PST/PDT timezone strings
+            if (dateStr.toUpperCase().contains("PST") || dateStr.contains("-0800")) {
+              // For PST times, parse with America/Los_Angeles timezone
+              String cleanDateStr = dateStr.replaceAll("(?i)\\s*PST|-0800", "").trim();
+              LocalDateTime ldt = LocalDateTime.parse(cleanDateStr, formatter);
+              zdt = ldt.atZone(ZoneId.of("America/Los_Angeles"))
+                .withZoneSameInstant(ZoneId.of("UTC"));
+            } else if (dateStr.toUpperCase().contains("PDT") || dateStr.contains("-0700")) {
+              // For PDT times, parse with America/Los_Angeles timezone
+              String cleanDateStr = dateStr.replaceAll("(?i)\\s*PDT|-0700", "").trim();
+              LocalDateTime ldt = LocalDateTime.parse(cleanDateStr, formatter);
+              zdt = ldt.atZone(ZoneId.of("America/Los_Angeles"))
+                .withZoneSameInstant(ZoneId.of("UTC"));
+            } else {
+              // For non-PST/PDT times, parse as LocalDateTime and convert to UTC
+              if (hasTime) {
+                LocalDateTime ldt = LocalDateTime.parse(dateStr, formatter);
+                zdt = ldt.atZone(ZoneId.of("UTC"));
+              } else {
+                // For date-only strings, parse as LocalDate and set time to midnight UTC
+                LocalDate ld = LocalDate.parse(dateStr, formatter);
+                zdt = ZonedDateTime.of(ld, LocalTime.MIDNIGHT, ZoneId.of("UTC"));
+              }
+            }
+            
+            row.setValue(idx, zdt);
+          } catch (Exception e) {
             throw new ErrorRowException(
-              NAME, String.format("Failed to parse '%s' with pattern '%s'", object, formatter.toPattern()), 1);
+              NAME, String.format("Failed to parse '%s' with pattern '%s'", object, formatter.toString()), 1);
           }
         } else {
           throw new ErrorRowException(
@@ -119,7 +154,7 @@ public class ParseSimpleDate implements Directive, Lineage {
   @Override
   public Mutation lineage() {
     return Mutation.builder()
-      .readable("Parsed column '%s' as date using user specified format '%s'", column, formatter.toPattern())
+      .readable("Parsed column '%s' as date using user specified format '%s'", column, formatter.toString())
       .relation(column, column)
       .build();
   }

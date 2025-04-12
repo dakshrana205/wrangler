@@ -1,0 +1,12 @@
+-------------------------------------------------------------------------------
+Test set: io.cdap.directives.parser.ParseDateTimeTest
+-------------------------------------------------------------------------------
+Tests run: 4, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 0.005 sec <<< FAILURE!
+testDateTimeFormats(io.cdap.directives.parser.ParseDateTimeTest)  Time elapsed: 0.003 sec  <<< FAILURE!
+java.lang.AssertionError: expected:<1> but was:<0>
+	at org.junit.Assert.fail(Assert.java:88)
+	at org.junit.Assert.failNotEquals(Assert.java:834)
+	at org.junit.Assert.assertEquals(Assert.java:645)
+	at org.junit.Assert.assertEquals(Assert.java:631)
+	at io.cdap.directives.parser.ParseDateTimeTest.testDateTimeFormats(ParseDateTimeTest.java:48)
+

@@ -1,0 +1,64 @@
+-------------------------------------------------------------------------------
+Test set: io.cdap.directives.row.SendToErrorAndContinueTest
+-------------------------------------------------------------------------------
+Tests run: 6, Failures: 0, Errors: 6, Skipped: 0, Time elapsed: 0.003 sec <<< FAILURE!
+testErrorConditionFalseAndContinueWithTransientVariable(io.cdap.directives.row.SendToErrorAndContinueTest)  Time elapsed: 0 sec  <<< ERROR!
+io.cdap.wrangler.api.RecipeException: Error encountered while parsing 'send-to-error-and-continue' : Improper usage of directive 'send-to-error-and-continue', usage - 'send-to-error-and-continue 'condition''
+	at io.cdap.wrangler.parser.MapArguments.<init>(MapArguments.java:61)
+	at io.cdap.wrangler.parser.GrammarBasedParser.lambda$parse$0(GrammarBasedParser.java:87)
+	at io.cdap.wrangler.parser.GrammarWalker.walk(GrammarWalker.java:96)
+	at io.cdap.wrangler.parser.GrammarBasedParser.parse(GrammarBasedParser.java:75)
+	at io.cdap.wrangler.executor.RecipePipelineExecutor.getDirectives(RecipePipelineExecutor.java:226)
+	at io.cdap.wrangler.executor.RecipePipelineExecutor.execute(RecipePipelineExecutor.java:108)
+	at io.cdap.directives.row.SendToErrorAndContinueTest.testErrorConditionFalseAndContinueWithTransientVariable(SendToErrorAndContinueTest.java:130)
+
+testErrorConditionTrueAndContinue(io.cdap.directives.row.SendToErrorAndContinueTest)  Time elapsed: 0.001 sec  <<< ERROR!
+io.cdap.wrangler.api.RecipeException: Expected argument 'condition' to be of type 'TEXT', but it is of type 'EXPRESSION' -   3:0  -  3:38  - 'send-to-error-and-continue exp:{C == 1}'
+	at io.cdap.wrangler.parser.MapArguments.<init>(MapArguments.java:101)
+	at io.cdap.wrangler.parser.GrammarBasedParser.lambda$parse$0(GrammarBasedParser.java:87)
+	at io.cdap.wrangler.parser.GrammarWalker.walk(GrammarWalker.java:96)
+	at io.cdap.wrangler.parser.GrammarBasedParser.parse(GrammarBasedParser.java:75)
+	at io.cdap.wrangler.executor.RecipePipelineExecutor.getDirectives(RecipePipelineExecutor.java:226)
+	at io.cdap.wrangler.executor.RecipePipelineExecutor.execute(RecipePipelineExecutor.java:108)
+	at io.cdap.directives.row.SendToErrorAndContinueTest.testErrorConditionTrueAndContinue(SendToErrorAndContinueTest.java:79)
+
+testTransientVariableHandling(io.cdap.directives.row.SendToErrorAndContinueTest)  Time elapsed: 0 sec  <<< ERROR!
+io.cdap.wrangler.api.RecipeException: Expected argument 'condition' to be of type 'TEXT', but it is of type 'EXPRESSION' -   3:0  -  3:38  - 'send-to-error-and-continue exp:{C == 1}'
+	at io.cdap.wrangler.parser.MapArguments.<init>(MapArguments.java:101)
+	at io.cdap.wrangler.parser.GrammarBasedParser.lambda$parse$0(GrammarBasedParser.java:87)
+	at io.cdap.wrangler.parser.GrammarWalker.walk(GrammarWalker.java:96)
+	at io.cdap.wrangler.parser.GrammarBasedParser.parse(GrammarBasedParser.java:75)
+	at io.cdap.wrangler.executor.RecipePipelineExecutor.getDirectives(RecipePipelineExecutor.java:226)
+	at io.cdap.wrangler.executor.RecipePipelineExecutor.execute(RecipePipelineExecutor.java:108)
+	at io.cdap.directives.row.SendToErrorAndContinueTest.testTransientVariableHandling(SendToErrorAndContinueTest.java:176)
+
+testErrorAndContinueNoofColumns(io.cdap.directives.row.SendToErrorAndContinueTest)  Time elapsed: 0 sec  <<< ERROR!
+io.cdap.wrangler.api.RecipeException: Error encountered while parsing 'send-to-error-and-continue' : Improper usage of directive 'send-to-error-and-continue', usage - 'send-to-error-and-continue 'condition''
+	at io.cdap.wrangler.parser.MapArguments.<init>(MapArguments.java:61)
+	at io.cdap.wrangler.parser.GrammarBasedParser.lambda$parse$0(GrammarBasedParser.java:87)
+	at io.cdap.wrangler.parser.GrammarWalker.walk(GrammarWalker.java:96)
+	at io.cdap.wrangler.parser.GrammarBasedParser.parse(GrammarBasedParser.java:75)
+	at io.cdap.wrangler.executor.RecipePipelineExecutor.getDirectives(RecipePipelineExecutor.java:226)
+	at io.cdap.wrangler.executor.RecipePipelineExecutor.execute(RecipePipelineExecutor.java:108)
+	at io.cdap.directives.row.SendToErrorAndContinueTest.testErrorAndContinueNoofColumns(SendToErrorAndContinueTest.java:53)
+
+testErrorConditionTrueAndContinueWithTransientVariable(io.cdap.directives.row.SendToErrorAndContinueTest)  Time elapsed: 0.001 sec  <<< ERROR!
+io.cdap.wrangler.api.RecipeException: Error encountered while parsing 'send-to-error-and-continue' : Improper usage of directive 'send-to-error-and-continue', usage - 'send-to-error-and-continue 'condition''
+	at io.cdap.wrangler.parser.MapArguments.<init>(MapArguments.java:61)
+	at io.cdap.wrangler.parser.GrammarBasedParser.lambda$parse$0(GrammarBasedParser.java:87)
+	at io.cdap.wrangler.parser.GrammarWalker.walk(GrammarWalker.java:96)
+	at io.cdap.wrangler.parser.GrammarBasedParser.parse(GrammarBasedParser.java:75)
+	at io.cdap.wrangler.executor.RecipePipelineExecutor.getDirectives(RecipePipelineExecutor.java:226)
+	at io.cdap.wrangler.executor.RecipePipelineExecutor.execute(RecipePipelineExecutor.java:108)
+	at io.cdap.directives.row.SendToErrorAndContinueTest.testErrorConditionTrueAndContinueWithTransientVariable(SendToErrorAndContinueTest.java:105)
+
+testErrorMessageFormatting(io.cdap.directives.row.SendToErrorAndContinueTest)  Time elapsed: 0 sec  <<< ERROR!
+io.cdap.wrangler.api.RecipeException: Error encountered while parsing 'send-to-error-and-continue' : Improper usage of directive 'send-to-error-and-continue', usage - 'send-to-error-and-continue 'condition''
+	at io.cdap.wrangler.parser.MapArguments.<init>(MapArguments.java:61)
+	at io.cdap.wrangler.parser.GrammarBasedParser.lambda$parse$0(GrammarBasedParser.java:87)
+	at io.cdap.wrangler.parser.GrammarWalker.walk(GrammarWalker.java:96)
+	at io.cdap.wrangler.parser.GrammarBasedParser.parse(GrammarBasedParser.java:75)
+	at io.cdap.wrangler.executor.RecipePipelineExecutor.getDirectives(RecipePipelineExecutor.java:226)
+	at io.cdap.wrangler.executor.RecipePipelineExecutor.execute(RecipePipelineExecutor.java:108)
+	at io.cdap.directives.row.SendToErrorAndContinueTest.testErrorMessageFormatting(SendToErrorAndContinueTest.java:151)
+

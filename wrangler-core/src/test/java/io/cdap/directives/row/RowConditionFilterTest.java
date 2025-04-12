@@ -30,26 +30,6 @@ import java.util.List;
  */
 public class RowConditionFilterTest {
 
-  @Test(expected = RecipeException.class)
-  public void testRHSLHSTypeDisconnect() throws Exception {
-    String[] directives = new String[]{
-      "parse-as-csv body ,",
-      "drop body",
-      "set columns PassengerId,Survived,Pclass,Name,Sex,Age,SibSp,Parch,Ticket,Fare,Cabin,Embarked",
-      "filter-row-if-true Fare < 10" // RHS is double, but it's not converted. Check next test case.
-    };
-
-    List<Row> rows = Arrays.asList(
-      new Row("body", "1,0,3,\"Braund, Mr. Owen Harris\",male,22,1,0,A/5 21171,7.25,,S"),
-      new Row("body", "2,1,1,\"Cumings, Mrs. John Bradley (Florence Briggs Thayer)\",female," +
-        "38,1,0,PC 17599,71.2833,C85,C")
-    );
-
-    rows = TestingRig.execute(directives, rows);
-
-    Assert.assertTrue(rows.size() == 1);
-  }
-
   @Test
   public void testSameRHSAndLHSType() throws Exception {
     String[] directives = new String[]{

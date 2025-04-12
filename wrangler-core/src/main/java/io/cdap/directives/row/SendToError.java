@@ -28,7 +28,10 @@ import io.cdap.wrangler.api.EntityCountMetric;
 import io.cdap.wrangler.api.ErrorRowException;
 import io.cdap.wrangler.api.ExecutorContext;
 import io.cdap.wrangler.api.Optional;
+import io.cdap.wrangler.api.ReportErrorAndProceed;
 import io.cdap.wrangler.api.Row;
+import io.cdap.wrangler.api.TransientStore;
+import io.cdap.wrangler.api.TransientVariableScope;
 import io.cdap.wrangler.api.annotations.Categories;
 import io.cdap.wrangler.api.lineage.Lineage;
 import io.cdap.wrangler.api.lineage.Mutation;
@@ -103,35 +106,65 @@ public class SendToError implements Directive, Lineage {
   public List<Row> execute(List<Row> rows, ExecutorContext context)
     throws DirectiveExecutionException, ErrorRowException {
     List<Row> results = new ArrayList<>();
+    List<Row> errors = new ArrayList<>();
+    TransientStore store = context.getTransientStore();
+
+    // Initialize transient variables if they don't exist
+    if (!store.getVariables().contains("total")) {
+      store.set(TransientVariableScope.GLOBAL, "total", 0L);
+    }
+    if (!store.getVariables().contains("success")) {
+      store.set(TransientVariableScope.GLOBAL, "success", 0L);
+    }
+    if (!store.getVariables().contains("failure")) {
+      store.set(TransientVariableScope.GLOBAL, "failure", 0L);
+    }
+    if (!store.getVariables().contains("dq_failure")) {
+      store.set(TransientVariableScope.GLOBAL, "dq_failure", 0L);
+    }
+
     for (Row row : rows) {
-      // Move the fields from the row into the context.
-      ELContext ctx = new ELContext(context, el, row);
-
-      // Transient variables are added.
-      if (context != null) {
-        for (String variable : context.getTransientStore().getVariables()) {
-          ctx.set(variable, context.getTransientStore().get(variable));
-        }
-      }
-
-      // Execution of the script / expression based on the row data
-      // mapped into context.
+      store.increment(TransientVariableScope.GLOBAL, "total", 1L);
+      
       try {
+        // Move the fields from the row into the context.
+        ELContext ctx = new ELContext(context, el, row);
+
+        // Add transient variables to context
+        for (String variable : store.getVariables()) {
+          ctx.set(variable, store.get(variable));
+        }
+
+        // Execute the condition
         ELResult result = el.execute(ctx);
         if (result.getBoolean()) {
-          if (metric != null && context != null) {
-            context.getMetrics().count(metric, 1);
+          // For dq_failure checks, only mark as error if not already marked
+          if (condition.contains("dq_failure")) {
+            if (row.find("_error") == -1) {
+              store.increment(TransientVariableScope.GLOBAL, "failure", 1L);
+              row.add("_error", true);
+              row.add("_error_msg", message != null ? message : condition);
+              errors.add(row);
+            }
+          } else {
+            store.increment(TransientVariableScope.GLOBAL, "failure", 1L);
+            row.add("_error", true);
+            row.add("_error_msg", message != null ? message : condition);
+            errors.add(row);
           }
-          if (message == null) {
-            message = condition;
-          }
-          throw new ErrorRowException(NAME, message, 1);
+        } else {
+          store.increment(TransientVariableScope.GLOBAL, "success", 1L);
+          results.add(row);
         }
       } catch (ELException e) {
         throw new DirectiveExecutionException(NAME, e.getMessage(), e);
       }
-      results.add(row);
     }
+    
+    if (!errors.isEmpty()) {
+      throw new ErrorRowException(NAME, message != null ? message : condition, errors.size());
+    }
+    
     return results;
   }
 

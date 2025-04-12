@@ -183,6 +183,15 @@
           <configuration>
             <source>1.8</source>
             <target>1.8</target>
+            <fork>true</fork>
+            <compilerArgs>
+              <arg>-J--add-opens=java.base/java.lang=ALL-UNNAMED</arg>
+              <arg>-J--add-opens=java.base/java.io=ALL-UNNAMED</arg>
+              <arg>-J--add-opens=java.base/java.util=ALL-UNNAMED</arg>
+              <arg>-J--add-opens=java.base/java.util.concurrent=ALL-UNNAMED</arg>
+              <arg>-J--add-opens=java.base/java.nio=ALL-UNNAMED</arg>
+              <arg>-J--add-opens=java.base/sun.nio.ch=ALL-UNNAMED</arg>
+            </compilerArgs>
           </configuration>
         </plugin>
         <plugin>
@@ -230,10 +239,30 @@
                   <exclude>*.md</exclude>
                   <exclude>**/*.md</exclude>
                   <exclude>**/*.json</exclude>
-                  <exclude>**/resources/**</exclude>
+                  <exclude>**/resources/**/*.png</exclude>
+                  <exclude>**/resources/**/*.csv</exclude>
+                  <exclude>**/resources/**/*.log</exclude>
+                  <exclude>**/resources/**/*.xlsx</exclude>
+                  <exclude>**/resources/**/*.extensions</exclude>
+                  <exclude>**/resources/**/*.mapping</exclude>
+                  <exclude>**/resources/**/*.avro</exclude>
+                  <exclude>**/resources/**/*.desc</exclude>
+                  <exclude>**/antlr4/**/*.g4</exclude>
+                  <exclude>**/generated-sources/**</exclude>
+                  <exclude>**/e2e-test/**</exclude>
+                  <exclude>**/*.feature</exclude>
+                  <exclude>**/BQValidationExpectedFiles/**</exclude>
+                  <exclude>**/BQtesdata/**</exclude>
                   <exclude>wrangler-demos/**</exclude>
                   <exclude>**/com/example/**</exclude>
                   <exclude>/**/icons/**</exclude>
+                  <exclude>**/target/**</exclude>
+                  <exclude>**/target 2/**</exclude>
+                  <exclude>**/*.tokens</exclude>
+                  <exclude>**/*.lst</exclude>
+                  <exclude>**/test/resources/**</exclude>
+                  <exclude>**/resources/**/icd-*.txt</exclude>
+                  <exclude>**/resources/**/*_cm_codes.txt</exclude>
                 </excludes>
               </configuration>
             </execution>
@@ -301,6 +330,25 @@
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-surefire-plugin</artifactId>
         <version>2.14.1</version>
+        <configuration>
+          <argLine>
+            --add-opens java.base/java.lang=ALL-UNNAMED
+            --add-opens java.base/java.io=ALL-UNNAMED
+            --add-opens java.base/java.util=ALL-UNNAMED
+            --add-opens java.base/java.util.concurrent=ALL-UNNAMED
+            --add-opens java.base/java.time=ALL-UNNAMED
+            --add-opens java.base/java.text=ALL-UNNAMED
+            --add-opens java.base/java.net=ALL-UNNAMED
+            --add-opens java.base/java.nio=ALL-UNNAMED
+            --add-opens java.base/sun.nio.ch=ALL-UNNAMED
+            --add-opens java.base/java.security=ALL-UNNAMED
+            --add-opens java.base/sun.security.util=ALL-UNNAMED
+            --add-opens java.base/javax.crypto=ALL-UNNAMED
+            --add-opens java.xml/javax.xml.parsers=ALL-UNNAMED
+            --add-opens java.xml/javax.xml.transform=ALL-UNNAMED
+            --add-opens java.xml/org.xml.sax=ALL-UNNAMED
+          </argLine>
+        </configuration>
       </plugin>
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
